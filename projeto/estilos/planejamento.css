@@ -1,0 +1,468 @@
+/* ================================================
+   planejamento.css – Documento de Planejamento
+   Câmara de Comércio de São Paulo
+   ================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap');
+
+/* === Variáveis de Design === */
+:root {
+  --cor-primaria: #1a3c6e;       /* Azul institucional – cabeçalhos, navbar */
+  --cor-secundaria: #e8a020;     /* Dourado – destaques, botões, acentos */
+  --cor-fundo: #f5f7fa;          /* Cinza claro – fundo da página */
+  --cor-texto: #2d2d2d;          /* Quase preto – texto corrido */
+  --cor-branco: #ffffff;
+  --cor-borda: #dce3ec;
+  --fonte-titulo: 'Montserrat', sans-serif;
+  --fonte-corpo: 'Open Sans', sans-serif;
+  --sombra: 0 2px 12px rgba(0,0,0,0.08);
+  --raio: 8px;
+}
+
+/* === Reset / Base === */
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  font-family: var(--fonte-corpo);
+  color: var(--cor-texto);
+  background-color: var(--cor-fundo);
+  margin: 0;
+  padding: 0;
+  line-height: 1.7;
+}
+
+/* === Cabeçalho do Documento === */
+header.doc-header {
+  background: linear-gradient(135deg, var(--cor-primaria) 0%, #254e8a 100%);
+  color: var(--cor-branco);
+  padding: 2.5rem 2rem 2rem;
+  text-align: center;
+}
+
+header.doc-header h1 {
+  font-family: var(--fonte-titulo);
+  font-size: 2rem;
+  margin: 0 0 0.4rem;
+  letter-spacing: 0.5px;
+}
+
+header.doc-header p.subtitulo {
+  font-size: 1rem;
+  opacity: 0.85;
+  margin: 0;
+}
+
+header.doc-header .badge {
+  display: inline-block;
+  background: var(--cor-secundaria);
+  color: var(--cor-primaria);
+  font-weight: 700;
+  font-size: 0.78rem;
+  padding: 0.25rem 0.8rem;
+  border-radius: 20px;
+  margin-top: 0.8rem;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+/* === Layout Principal === */
+main {
+  max-width: 960px;
+  margin: 2rem auto;
+  padding: 0 1.5rem 3rem;
+}
+
+/* === Seções === */
+section.secao {
+  background: var(--cor-branco);
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio);
+  padding: 1.8rem 2rem;
+  margin-bottom: 2rem;
+  box-shadow: var(--sombra);
+}
+
+section.secao h2 {
+  font-family: var(--fonte-titulo);
+  font-size: 1.2rem;
+  color: var(--cor-primaria);
+  border-left: 4px solid var(--cor-secundaria);
+  padding-left: 0.8rem;
+  margin: 0 0 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+section.secao p,
+section.secao li {
+  font-size: 0.97rem;
+  margin: 0.4rem 0;
+}
+
+section.secao ul,
+section.secao ol {
+  padding-left: 1.4rem;
+}
+
+/* === Esquema de Cores === */
+.paleta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.cor-item {
+  flex: 1 1 180px;
+  border-radius: var(--raio);
+  overflow: hidden;
+  border: 1px solid var(--cor-borda);
+  box-shadow: var(--sombra);
+}
+
+.cor-amostra {
+  height: 70px;
+}
+
+.cor-info {
+  padding: 0.6rem 0.9rem;
+  font-size: 0.85rem;
+  background: var(--cor-branco);
+}
+
+.cor-info strong {
+  display: block;
+  font-family: var(--fonte-titulo);
+  font-size: 0.9rem;
+  margin-bottom: 0.2rem;
+}
+
+/* === Tipografia === */
+.fonte-exemplo {
+  background: var(--cor-fundo);
+  border-radius: var(--raio);
+  padding: 1rem 1.2rem;
+  margin-bottom: 1rem;
+  border: 1px solid var(--cor-borda);
+}
+
+.fonte-exemplo .nome-fonte {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--cor-primaria);
+  font-weight: 700;
+  margin-bottom: 0.4rem;
+}
+
+.fonte-exemplo .amostra-montserrat {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--cor-primaria);
+}
+
+.fonte-exemplo .amostra-opensans {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1rem;
+  color: var(--cor-texto);
+}
+
+/* === Wireframes === */
+.wireframes-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-top: 1rem;
+}
+
+@media (max-width: 640px) {
+  .wireframes-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+.wireframe-card {
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio);
+  overflow: hidden;
+}
+
+.wireframe-card h3 {
+  font-family: var(--fonte-titulo);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--cor-branco);
+  background: var(--cor-primaria);
+  margin: 0;
+  padding: 0.6rem 1rem;
+}
+
+/* === Wireframe Desktop === */
+.wf-desktop {
+  background: #f0f0f0;
+  padding: 0.8rem;
+  font-size: 0.75rem;
+}
+
+.wf-header-bar {
+  background: var(--cor-primaria);
+  color: var(--cor-branco);
+  padding: 0.5rem 0.8rem;
+  border-radius: 4px 4px 0 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+
+.wf-logo-placeholder {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.wf-nav {
+  display: flex;
+  gap: 0.5rem;
+  font-size: 0.7rem;
+  opacity: 0.9;
+}
+
+.wf-hero {
+  background: #c5c5c5;
+  height: 80px;
+  border-radius: 4px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  padding: 0.4rem;
+  margin-bottom: 0.5rem;
+  font-size: 0.65rem;
+  color: #555;
+  font-style: italic;
+}
+
+.wf-hero-btn {
+  display: inline-block;
+  background: var(--cor-secundaria);
+  color: var(--cor-primaria);
+  padding: 0.2rem 0.5rem;
+  border-radius: 3px;
+  font-size: 0.65rem;
+  font-weight: 700;
+}
+
+.wf-grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.4rem;
+  margin-bottom: 0.5rem;
+}
+
+.wf-box {
+  background: #ddd;
+  border-radius: 4px;
+  padding: 0.4rem;
+  text-align: center;
+  font-size: 0.65rem;
+  color: #555;
+}
+
+.wf-box-dark {
+  background: #444;
+  color: #fff;
+  font-weight: 600;
+  border-radius: 4px 4px 0 0;
+  padding: 0.3rem;
+  font-size: 0.65rem;
+  text-align: center;
+}
+
+.wf-empresas {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.4rem;
+  margin-bottom: 0.5rem;
+}
+
+.wf-empresa-card {
+  background: #e8e8e8;
+  border-radius: 4px;
+  padding: 0.4rem;
+  font-size: 0.6rem;
+  color: #555;
+  text-align: center;
+}
+
+.wf-footer-bar {
+  background: #333;
+  color: #ccc;
+  padding: 0.5rem 0.8rem;
+  border-radius: 0 0 4px 4px;
+  font-size: 0.6rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* === Wireframe Mobile === */
+.wf-mobile {
+  background: #f0f0f0;
+  padding: 0.8rem;
+}
+
+.wf-phone-frame {
+  background: #111;
+  border-radius: 16px;
+  padding: 8px;
+  max-width: 180px;
+  margin: 0 auto;
+}
+
+.wf-phone-screen {
+  background: var(--cor-branco);
+  border-radius: 10px;
+  overflow: hidden;
+  font-size: 0.6rem;
+}
+
+.wf-mobile-header {
+  background: var(--cor-primaria);
+  color: var(--cor-branco);
+  padding: 0.4rem 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.65rem;
+  font-weight: 700;
+}
+
+.wf-mobile-hero {
+  background: #c5c5c5;
+  height: 50px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding: 0.3rem;
+}
+
+.wf-mobile-hero-btn {
+  background: var(--cor-secundaria);
+  color: var(--cor-primaria);
+  padding: 0.15rem 0.4rem;
+  border-radius: 3px;
+  font-size: 0.55rem;
+  font-weight: 700;
+}
+
+.wf-mobile-section {
+  padding: 0.4rem 0.5rem;
+}
+
+.wf-mobile-box {
+  background: #444;
+  color: #fff;
+  padding: 0.25rem 0.4rem;
+  border-radius: 3px;
+  font-size: 0.6rem;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 0.25rem;
+}
+
+.wf-mobile-content {
+  background: #e8e8e8;
+  border-radius: 3px;
+  height: 35px;
+  margin-bottom: 0.25rem;
+}
+
+.wf-mobile-footer {
+  background: #333;
+  color: #ccc;
+  padding: 0.4rem 0.5rem;
+  font-size: 0.55rem;
+  text-align: center;
+}
+
+/* === Mapa do Site === */
+.mapa-site {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 0;
+}
+
+.mapa-raiz {
+  background: var(--cor-primaria);
+  color: var(--cor-branco);
+  padding: 0.5rem 1.5rem;
+  border-radius: var(--raio);
+  font-family: var(--fonte-titulo);
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.mapa-linha {
+  width: 2px;
+  height: 20px;
+  background: var(--cor-borda);
+}
+
+.mapa-nos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  justify-content: center;
+}
+
+.mapa-no {
+  background: var(--cor-fundo);
+  border: 2px solid var(--cor-primaria);
+  color: var(--cor-primaria);
+  padding: 0.4rem 1rem;
+  border-radius: var(--raio);
+  font-family: var(--fonte-titulo);
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+/* === Cenários === */
+.cenario {
+  background: var(--cor-fundo);
+  border-left: 4px solid var(--cor-secundaria);
+  padding: 0.8rem 1rem;
+  border-radius: 0 var(--raio) var(--raio) 0;
+  margin-bottom: 0.8rem;
+  font-size: 0.95rem;
+}
+
+.cenario strong {
+  display: block;
+  color: var(--cor-primaria);
+  font-family: var(--fonte-titulo);
+  margin-bottom: 0.3rem;
+  font-size: 0.9rem;
+}
+
+/* === Rodapé === */
+footer {
+  text-align: center;
+  padding: 1.5rem;
+  font-size: 0.8rem;
+  color: #888;
+  border-top: 1px solid var(--cor-borda);
+  margin-top: 2rem;
+}
+
+/* === Responsivo === */
+@media (max-width: 600px) {
+  header.doc-header h1 { font-size: 1.4rem; }
+  section.secao { padding: 1.2rem 1rem; }
+  .paleta { flex-direction: column; }
+  .wf-grid-3, .wf-empresas { grid-template-columns: 1fr 1fr; }
+}
