@@ -1,0 +1,396 @@
+﻿/* ==========================================================================
+   CÂMARA DE COMÉRCIO DE SALVADOR - PÁGINA INICIAL
+   Estilos específicos da Home | WDD 231 - Douglas Silva
+   ========================================================================== */
+
+/* HERO / IMAGEM PRINCIPAL */
+.secao-hero {
+  position: relative;
+  overflow: hidden;
+  max-height: 520px;
+}
+
+.imagem-hero {
+  width: 100%;
+  height: 520px;
+  object-fit: cover;
+  object-position: center 30%;
+  display: block;
+  filter: brightness(0.55);
+}
+
+.sobreposicao-hero {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 1.5rem;
+}
+
+.conteudo-hero {
+  max-width: 760px;
+}
+
+.titulo-hero {
+  font: 700 2rem/1.2 'Montserrat', sans-serif;
+  color: #ffffff;
+  text-shadow: 0 2px 12px rgba(0,0,0,0.6);
+  margin: 0 0 0.75rem;
+}
+
+.subtitulo-hero {
+  font-size: 1rem;
+  color: #f1f5f9;
+  text-shadow: 0 1px 6px rgba(0,0,0,0.5);
+  margin: 0 0 1.5rem;
+  line-height: 1.6;
+}
+
+/* CTA - CHAMADA PARA AÇÃO */
+.botao-cta {
+  display: inline-block;
+  background-color: #d4af37;
+  color: #0b2545;
+  font: 700 1rem 'Montserrat', sans-serif;
+  padding: 0.85rem 2rem;
+  border-radius: 50px;
+  text-decoration: none;
+  letter-spacing: 0.03em;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+}
+
+.botao-cta:hover {
+  background-color: #f3d06a;
+  color: #0b2545;
+  transform: translateY(-2px);
+}
+
+/* GRADE PRINCIPAL DA HOME */
+.grade-inicio {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+/* CARDS DE SEÇÃO */
+.card-secao {
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 10px rgba(11,37,69,0.07);
+}
+
+.titulo-secao {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font: 700 1.15rem 'Montserrat', sans-serif;
+  color: #0b2545;
+  margin: 0 0 1.25rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid #d4af37;
+}
+
+/* SEÇÃO EVENTOS */
+.lista-eventos {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.item-evento {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  padding-bottom: 0.85rem;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.item-evento:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.data-evento {
+  flex-shrink: 0;
+  background-color: #0b2545;
+  color: #ffffff;
+  border-radius: 6px;
+  padding: 0.4rem 0.6rem;
+  text-align: center;
+  min-width: 50px;
+}
+
+.data-evento .dia {
+  display: block;
+  font: 700 1.4rem 'Montserrat', sans-serif;
+  line-height: 1;
+}
+
+.data-evento .mes {
+  display: block;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #f3d06a;
+}
+
+.info-evento h3 {
+  font: 600 0.95rem 'Montserrat', sans-serif;
+  color: #0b2545;
+  margin: 0 0 0.2rem;
+}
+
+.info-evento p {
+  font-size: 0.85rem;
+  color: #475569;
+  margin: 0;
+}
+
+/* SEÇÃO TEMPO */
+.info-tempo {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.carregando-tempo {
+  color: #64748b;
+  font-style: italic;
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+.tempo-atual {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.icone-tempo {
+  font-size: 3.5rem;
+  line-height: 1;
+}
+
+.dados-tempo-atual h3 {
+  font: 700 2rem 'Montserrat', sans-serif;
+  color: #0b2545;
+  margin: 0;
+}
+
+.dados-tempo-atual p {
+  font-size: 0.9rem;
+  color: #475569;
+  margin: 0.15rem 0 0;
+  text-transform: capitalize;
+}
+
+.previsao-titulo {
+  font: 600 0.85rem 'Montserrat', sans-serif;
+  color: #0b2545;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin: 0.5rem 0 0;
+}
+
+.previsao-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.5rem;
+}
+
+.card-previsao {
+  background-color: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 0.6rem;
+  text-align: center;
+}
+
+.card-previsao .dia-semana {
+  font: 600 0.75rem 'Montserrat', sans-serif;
+  color: #0b2545;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.card-previsao .icone-prev {
+  font-size: 1.6rem;
+  margin: 0.3rem 0;
+  display: block;
+}
+
+.card-previsao .temp-prev {
+  font: 700 1rem 'Montserrat', sans-serif;
+  color: #0b2545;
+}
+
+.card-previsao .desc-prev {
+  font-size: 0.72rem;
+  color: #64748b;
+  text-transform: capitalize;
+}
+
+/* SEÇÃO DESTAQUES */
+.secao-destaques {
+  margin-bottom: 3rem;
+}
+
+.titulo-destaques {
+  margin-top: 0;
+}
+
+.descricao-destaques {
+  color: #475569;
+  font-size: 0.95rem;
+  margin: -0.75rem 0 1.5rem;
+}
+
+.destaques-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+}
+
+.cartao-destaque {
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  box-shadow: 0 2px 10px rgba(11,37,69,0.07);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  position: relative;
+}
+
+.cartao-destaque:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(11,37,69,0.12);
+}
+
+.cartao-destaque.ouro {
+  border-top: 4px solid #d4af37;
+}
+
+.cartao-destaque.prata {
+  border-top: 4px solid #64748b;
+}
+
+.logo-destaque-wrapper {
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.85rem;
+}
+
+.logo-destaque {
+  max-height: 70px;
+  max-width: 140px;
+}
+
+.nome-destaque {
+  font: 700 1.05rem 'Montserrat', sans-serif;
+  color: #0b2545;
+  margin: 0 0 0.35rem;
+}
+
+.badge-nivel-destaque {
+  display: inline-block;
+  font: 700 0.7rem 'Montserrat', sans-serif;
+  text-transform: uppercase;
+  padding: 0.2rem 0.65rem;
+  border-radius: 50px;
+  margin-bottom: 0.75rem;
+}
+
+.badge-nivel-destaque.ouro {
+  background-color: #d4af37;
+  color: #0b2545;
+}
+
+.badge-nivel-destaque.prata {
+  background-color: #64748b;
+  color: #ffffff;
+}
+
+.contatos-destaque {
+  font-size: 0.85rem;
+  color: #475569;
+  width: 100%;
+  margin-bottom: 0.85rem;
+}
+
+.contatos-destaque p {
+  margin: 0.25rem 0;
+}
+
+.link-site-destaque {
+  display: inline-block;
+  padding: 0.45rem 1.2rem;
+  background-color: #0b2545;
+  color: #ffffff;
+  font: 600 0.82rem 'Montserrat', sans-serif;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+}
+
+.link-site-destaque:hover {
+  background-color: #d4af37;
+  color: #0b2545;
+}
+
+/* MEDIA QUERIES */
+@media (min-width: 600px) {
+  .titulo-hero {
+    font-size: 2.5rem;
+  }
+
+  .subtitulo-hero {
+    font-size: 1.1rem;
+  }
+
+  .destaques-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 768px) {
+  .titulo-hero {
+    font-size: 3rem;
+  }
+
+  .grade-inicio {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .destaques-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .titulo-hero {
+    font-size: 3.5rem;
+  }
+
+  .secao-hero {
+    max-height: 600px;
+  }
+
+  .imagem-hero {
+    height: 600px;
+  }
+}
