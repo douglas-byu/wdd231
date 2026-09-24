@@ -1,0 +1,465 @@
+/* Câmara de Comércio de Salvador - Associe-se | WDD 231 */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font: 1rem/1.6 'Open Sans', sans-serif;
+  color: #1e293b;
+  background-color: #f4f7fa;
+}
+
+a {
+  color: #133c55;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #d4af37;
+}
+
+h1, h2, h3, .titulo-rodape {
+  font-family: 'Montserrat', sans-serif;
+  color: #0b2545;
+  margin: 0 0 0.5rem;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+/* CABEÇALHO E MENU */
+.cabecalho-principal {
+  background-color: #0b2545;
+  color: #ffffff;
+  border-bottom: 3px solid #d4af37;
+}
+
+.container-cabecalho {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 1.25rem;
+}
+
+.marca-camara .link-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: #ffffff;
+}
+
+.nome-camara {
+  display: block;
+  font: 700 1.2rem 'Montserrat', sans-serif;
+}
+
+.subtitulo-camara {
+  display: block;
+  font-size: 0.75rem;
+  color: #f3d06a;
+}
+
+.botao-hamburguer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 42px;
+  height: 42px;
+  background-color: #133c55;
+  border: 1px solid #d4af37;
+  border-radius: 6px;
+  cursor: pointer;
+  padding: 8px;
+}
+
+.icone-barra {
+  width: 100%;
+  height: 3px;
+  background-color: #ffffff;
+  border-radius: 2px;
+}
+
+.lista-navegacao {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 0.5rem;
+}
+
+.link-navegacao {
+  display: block;
+  font: 600 1rem 'Montserrat', sans-serif;
+  color: #f8fafc;
+  padding: 0.5rem 0.85rem;
+  border-radius: 4px;
+}
+
+.link-navegacao:hover {
+  background-color: #133c55;
+  color: #f3d06a;
+}
+
+.link-navegacao.ativo {
+  background-color: #d4af37;
+  color: #0b2545;
+}
+
+/* ÁREA ASSOCIE-SE */
+.conteudo-associacao {
+  padding: 2rem 0 3rem;
+}
+
+.cabecalho-secao-associacao {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.badge-secao {
+  display: inline-block;
+  background-color: #fefce8;
+  color: #133c55;
+  border: 1px solid #d4af37;
+  font: 700 0.8rem 'Montserrat', sans-serif;
+  padding: 0.3rem 0.8rem;
+  border-radius: 50px;
+}
+
+.descricao-pagina {
+  color: #475569;
+  max-width: 720px;
+  margin: 0.5rem auto 0;
+}
+
+.layout-associacao {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* FORMULÁRIO */
+.area-formulario {
+  background-color: #ffffff;
+  padding: 1.75rem;
+  border-radius: 10px;
+  border: 1px solid #cbd5e1;
+}
+
+.formulario-subtitulo {
+  font-size: 0.9rem;
+  color: #475569;
+  border-bottom: 1px solid #cbd5e1;
+  padding-bottom: 0.75rem;
+  margin-bottom: 1.25rem;
+}
+
+.form-associacao,
+.grupo-linha {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+
+.campo-rotulo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  font: 600 0.9rem 'Montserrat', sans-serif;
+  color: #0b2545;
+}
+
+.campo-rotulo .texto-rotulo {
+  display: flex;
+  justify-content: space-between;
+}
+
+.campo-rotulo .obrigatorio {
+  color: #dc2626;
+}
+
+.campo-rotulo .dica-campo {
+  font: 400 0.75rem 'Open Sans', sans-serif;
+  color: #475569;
+}
+
+.form-associacao :is(input, select, textarea) {
+  font: 0.95rem 'Open Sans', sans-serif;
+  padding: 0.7rem 0.85rem;
+  border: 1.5px solid #cbd5e1;
+  border-radius: 6px;
+  color: #1e293b;
+  outline: 0;
+}
+
+.form-associacao :is(input, select, textarea):focus {
+  border-color: #133c55;
+}
+
+.btn-enviar {
+  background-color: #0b2545;
+  color: #ffffff;
+  font: 700 1rem 'Montserrat', sans-serif;
+  padding: 0.85rem 1.5rem;
+  border: 0;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.btn-enviar:hover {
+  background-color: #133c55;
+  color: #f3d06a;
+}
+
+/* CARTÕES E ANIMAÇÃO */
+.area-niveis,
+.grade-cartoes-niveis {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+@keyframes animacaoEntradaCartao {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.cartao-nivel {
+  background-color: #ffffff;
+  border-radius: 8px;
+  padding: 1.25rem;
+  border: 1px solid #cbd5e1;
+  border-left: 5px solid #0b2545;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  animation: animacaoEntradaCartao 0.6s ease forwards;
+  opacity: 0;
+}
+
+.cartao-nivel:nth-child(1) { animation-delay: 0.1s; border-left-color: #2563eb; }
+.cartao-nivel:nth-child(2) { animation-delay: 0.2s; border-left-color: #7c2d12; }
+.cartao-nivel:nth-child(3) { animation-delay: 0.3s; border-left-color: #334155; }
+.cartao-nivel:nth-child(4) { animation-delay: 0.4s; border-left-color: #854d0e; }
+
+.cartao-topo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.cartao-nivel-taxa {
+  font: 700 0.85rem 'Montserrat', sans-serif;
+  padding: 0.2rem 0.5rem;
+  border-radius: 20px;
+  background-color: #f1f5f9;
+  color: #1e293b;
+}
+
+.btn-abrir-modal {
+  background: none;
+  color: #133c55;
+  font: 700 0.85rem 'Montserrat', sans-serif;
+  border: 1.5px solid #133c55;
+  padding: 0.45rem 0.85rem;
+  border-radius: 5px;
+  cursor: pointer;
+  align-self: flex-start;
+}
+
+/* REGRAS COMPLEMENTARES DE MODAIS E RODAPÉ */
+@media screen {
+  .cartao-nivel.np .cartao-nivel-taxa { color: #1d4ed8; }
+  .cartao-nivel.bronze .cartao-nivel-taxa { color: #7c2d12; }
+  .cartao-nivel.silver .cartao-nivel-taxa { color: #334155; }
+  .cartao-nivel.gold .cartao-nivel-taxa { color: #854d0e; }
+
+  dialog.modal-beneficios {
+    border: 0;
+    border-radius: 10px;
+    padding: 0;
+    max-width: 500px;
+    width: 90%;
+    background-color: #ffffff;
+  }
+
+  dialog.modal-beneficios::backdrop {
+    background-color: #0b2545b3;
+  }
+
+  .cabecalho-modal {
+    background-color: #0b2545;
+    color: #ffffff;
+    padding: 1rem 1.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 3px solid #d4af37;
+  }
+
+  .btn-fechar-modal {
+    background: none;
+    border: 0;
+    color: #ffffff;
+    font-size: 1.4rem;
+    cursor: pointer;
+  }
+
+  .corpo-modal {
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .taxa-destaque {
+    background-color: #f8fafc;
+    padding: 0.75rem 1rem;
+    border-radius: 6px;
+    border-left: 4px solid #d4af37;
+    font-size: 0.9rem;
+  }
+
+  .lista-beneficios {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.65rem;
+    font-size: 0.9rem;
+  }
+
+  .icone-check {
+    color: #065f46;
+    font-weight: 700;
+    margin-right: 0.4rem;
+  }
+
+  .rodape-modal {
+    padding: 0.75rem 1.25rem 1.25rem;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .btn-fechar-rodape {
+    background-color: #133c55;
+    color: #ffffff;
+    border: 0;
+    font: 600 0.85rem 'Montserrat', sans-serif;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .rodape-principal {
+    background-color: #0b2545;
+    color: #cbd5e1;
+    padding: 2rem 0 1.25rem;
+    border-top: 3px solid #d4af37;
+  }
+
+  .container-rodape {
+    display: flex;
+    flex-direction: column;
+    gap: 1.75rem;
+  }
+
+  .identidade-rodape {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+  }
+
+  .endereco-camara {
+    font-style: normal;
+    font-size: 0.88rem;
+  }
+
+  .endereco-camara a {
+    color: #f3d06a;
+  }
+
+  .links-redes {
+    display: flex;
+    gap: 0.65rem;
+  }
+
+  .links-redes a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    background-color: #133c55;
+    border: 1px solid #d4af37;
+    border-radius: 50%;
+    color: #ffffff;
+  }
+
+  .links-redes a:hover {
+    background-color: #d4af37;
+    color: #0b2545;
+  }
+
+  .creditos-rodape strong {
+    color: #ffffff;
+  }
+
+  .modificacao-texto {
+    font-size: 0.8rem;
+    color: #94a3b8;
+  }
+}
+
+/* MEDIA QUERIES RESPONSIVAS */
+@media (max-width: 767px) {
+  .navegacao-principal {
+    background-color: #0b2545;
+    max-height: 0;
+    overflow: hidden;
+    transition: 0.3s;
+  }
+  .navegacao-principal.ativo {
+    max-height: 280px;
+  }
+  .lista-navegacao {
+    flex-direction: column;
+    padding: 0.5rem 1.25rem 1rem;
+  }
+  .botao-hamburguer.aberto .icone-barra:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+  .botao-hamburguer.aberto .icone-barra:nth-child(2) { opacity: 0; }
+  .botao-hamburguer.aberto .icone-barra:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+}
+
+@media (min-width: 640px) {
+  .grupo-linha {
+    flex-direction: row;
+  }
+  .grupo-linha .campo-rotulo {
+    flex: 1;
+  }
+}
+
+@media (min-width: 768px) {
+  .botao-hamburguer {
+    display: none;
+  }
+  .container-rodape {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+@media (min-width: 900px) {
+  .layout-associacao {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    align-items: start;
+    gap: 2.25rem;
+  }
+}
