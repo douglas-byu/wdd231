@@ -1,7 +1,7 @@
-/**
+﻿/**
  * CÂMARA DE COMÉRCIO DE SALVADOR - PÁGINA DE AGRADECIMENTO / CONFIRMAÇÃO
  * Extração de parâmetros de consulta (GET) e exibição dinâmica de dados
- * WDD 231 - Matheus Santana
+ * WDD 231 - Douglas
  */
 
 document.addEventListener('DOMContentLoaded', () => {

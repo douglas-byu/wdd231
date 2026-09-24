@@ -1,7 +1,7 @@
-/**
+﻿/**
  * CÂMARA DE COMÉRCIO DE SALVADOR - PÁGINA ASSOCIE-SE
  * Script Vanilla JS para manipulação de formulário, modais <dialog> e metadados
- * WDD 231 - Matheus Santana
+ * WDD 231 - Douglas
  */
 
 document.addEventListener('DOMContentLoaded', () => {
