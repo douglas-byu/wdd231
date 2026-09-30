@@ -1,20 +1,21 @@
 /* ================================================
    planejamento.css – Documento de Planejamento
-   Câmara de Comércio de São Paulo
+   AlugaFácil – Plataforma de Locação de Imóveis
+   WDD231 – Projeto Individual
    ================================================ */
-
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap');
+/* Fontes carregadas via <link> no HTML (Poppins + Inter) */
 
 /* === Variáveis de Design === */
 :root {
-  --cor-primaria: #1a3c6e;       /* Azul institucional – cabeçalhos, navbar */
-  --cor-secundaria: #e8a020;     /* Dourado – destaques, botões, acentos */
-  --cor-fundo: #f5f7fa;          /* Cinza claro – fundo da página */
-  --cor-texto: #2d2d2d;          /* Quase preto – texto corrido */
+  --cor-primaria: #1a4f7a;       /* Azul Marinho – cabeçalhos, navbar, rodapé */
+  --cor-secundaria: #27ae60;     /* Verde Esmeralda – botões, badges, links ativos */
+  --cor-acento: #f39c12;         /* Âmbar – CTAs secundários, preços em destaque */
+  --cor-fundo: #f4f6f9;          /* Cinza Claro – fundo da página */
+  --cor-texto: #2c3e50;          /* Cinza Escuro – texto corrido */
   --cor-branco: #ffffff;
   --cor-borda: #dce3ec;
-  --fonte-titulo: 'Montserrat', sans-serif;
-  --fonte-corpo: 'Open Sans', sans-serif;
+  --fonte-titulo: 'Poppins', sans-serif;
+  --fonte-corpo: 'Inter', sans-serif;
   --sombra: 0 2px 12px rgba(0,0,0,0.08);
   --raio: 8px;
 }
@@ -155,15 +156,15 @@ section.secao ol {
   margin-bottom: 0.4rem;
 }
 
-.fonte-exemplo .amostra-montserrat {
-  font-family: 'Montserrat', sans-serif;
+.fonte-exemplo .amostra-poppins {
+  font-family: 'Poppins', sans-serif;
   font-size: 1.6rem;
   font-weight: 700;
   color: var(--cor-primaria);
 }
 
-.fonte-exemplo .amostra-opensans {
-  font-family: 'Open Sans', sans-serif;
+.fonte-exemplo .amostra-inter {
+  font-family: 'Inter', sans-serif;
   font-size: 1rem;
   color: var(--cor-texto);
 }
@@ -198,6 +199,14 @@ section.secao ol {
   margin: 0;
   padding: 0.6rem 1rem;
 }
+
+.wireframe-img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-top: 1px solid var(--cor-borda);
+}
+
 
 /* === Wireframe Desktop === */
 .wf-desktop {
