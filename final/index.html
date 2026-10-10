@@ -5,13 +5,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AlugaFácil | Aluguel de Imóveis Residenciais sem Complicação</title>
-  <meta name="description" content="Encontre apartamentos, casas e studios para alugar em São Paulo com a AlugaFácil. Plataforma de locação residencial transparente, moderna e sem fiador.">
+  <meta name="description" content="Encontre apartamentos, casas e studios para alugar em São Paulo com a AlugaFácil. Plataforma de locação residencial transparente e sem fiador.">
   <meta name="author" content="Douglas Silva">
 
-  <!-- Metadados Open Graph para Redes Sociais -->
+  <!-- Metadados Open Graph para Redes Sociais (URLs Absolutas e Imagem 1200x630) -->
   <meta property="og:title" content="AlugaFácil | Locação de Imóveis Residenciais">
-  <meta property="og:description" content="Encontre o imóvel ideal para alugar de forma simples e transparente com a AlugaFácil.">
-  <meta property="og:image" content="imagens/logo.svg">
+  <meta property="og:description" content="Encontre apartamentos, casas e studios para alugar em São Paulo com a AlugaFácil. Plataforma de locação residencial transparente e sem fiador.">
+  <meta property="og:image" content="https://douglas-byu.github.io/wdd231/final/imagens/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:type" content="image/png">
   <meta property="og:url" content="https://douglas-byu.github.io/wdd231/final/index.html">
   <meta property="og:type" content="website">
 
@@ -23,7 +26,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
 
-  <!-- Estilos CSS -->
+  <!-- Estilos CSS Externos (Sem estilos inline) -->
   <link rel="stylesheet" href="estilos/normalize.css">
   <link rel="stylesheet" href="estilos/principal.css">
 
@@ -60,7 +63,7 @@
           <li><a href="index.html" class="nav-link ativo" aria-current="page">Página Inicial</a></li>
           <li>
             <a href="imoveis.html" class="nav-link">
-              Imóveis <span class="nav-favoritos-badge" style="display: none;" title="Imóveis favoritados">0</span>
+              Imóveis <span class="nav-favoritos-badge oculto" title="Imóveis favoritados">0</span>
             </a>
           </li>
           <li><a href="contato.html" class="nav-link">Contato</a></li>
@@ -140,7 +143,7 @@
         <p class="mensagem-feedback">Carregando imóveis em evidência...</p>
       </div>
 
-      <div style="text-align: center; margin-top: 2.5rem;">
+      <div class="alinhamento-centro-topo">
         <a href="imoveis.html" class="btn-secundario">
           Ver Todos os Imóveis Disponíveis →
         </a>
@@ -234,9 +237,9 @@
       <div class="secao-cta">
         <h2>Pronto para encontrar seu próximo endereço?</h2>
         <p>Explore centenas de opções residenciais disponíveis ou entre em contato com nossos consultores especialistas.</p>
-        <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
+        <div class="botoes-container-cta">
           <a href="imoveis.html" class="btn-secundario">Explorar Imóveis</a>
-          <a href="contato.html" class="btn-outline" style="border-color: #ffffff; color: #ffffff;">Falar com um Consultor</a>
+          <a href="contato.html" class="btn-outline btn-cta-falar">Falar com um Consultor</a>
         </div>
       </div>
     </section>
@@ -250,7 +253,7 @@
       <div class="footer-col">
         <h3>AlugaFácil</h3>
         <p>Plataforma moderna de locação residencial desenvolvida para facilitar a conexão entre locatários e lares incríveis em São Paulo.</p>
-        <p style="margin-top: 0.75rem;"><strong>WDD231 – Projeto Final Individual</strong></p>
+        <p class="espacamento-topo-sm"><strong>WDD231 – Projeto Final Individual</strong></p>
       </div>
 
       <!-- Coluna 2: Navegação e Atribuições -->

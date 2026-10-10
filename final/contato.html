@@ -5,13 +5,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contato e Agendamento de Visitas | AlugaFácil</title>
-  <meta name="description" content="Entre em contato com a equipe da AlugaFácil para agendar visitas a imóveis, tirar dúvidas sobre o processo de locação ou anunciar seu imóvel.">
+  <meta name="description" content="Entre em contato com a equipe AlugaFácil para agendar visitas a imóveis, esclarecer dúvidas de locação ou anunciar seu imóvel em São Paulo.">
   <meta name="author" content="Douglas Silva">
 
   <!-- Open Graph -->
   <meta property="og:title" content="Contato e Agendamento | AlugaFácil">
-  <meta property="og:description" content="Fale conosco para agendar uma visita ao seu futuro lar ou tirar dúvidas sobre aluguel sem burocracia.">
-  <meta property="og:image" content="imagens/logo.svg">
+  <meta property="og:description" content="Entre em contato com a equipe AlugaFácil para agendar visitas a imóveis, esclarecer dúvidas de locação ou anunciar seu imóvel em São Paulo.">
+  <meta property="og:image" content="https://douglas-byu.github.io/wdd231/final/imagens/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:type" content="image/png">
   <meta property="og:url" content="https://douglas-byu.github.io/wdd231/final/contato.html">
   <meta property="og:type" content="website">
 
@@ -23,7 +26,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
 
-  <!-- CSS -->
+  <!-- CSS Externo -->
   <link rel="stylesheet" href="estilos/normalize.css">
   <link rel="stylesheet" href="estilos/principal.css">
 
@@ -60,7 +63,7 @@
           <li><a href="index.html" class="nav-link">Página Inicial</a></li>
           <li>
             <a href="imoveis.html" class="nav-link">
-              Imóveis <span class="nav-favoritos-badge" style="display: none;" title="Imóveis favoritados">0</span>
+              Imóveis <span class="nav-favoritos-badge oculto" title="Imóveis favoritados">0</span>
             </a>
           </li>
           <li><a href="contato.html" class="nav-link ativo" aria-current="page">Contato</a></li>
@@ -87,7 +90,7 @@
         <!-- Informações e Canais Diretos -->
         <aside class="contato-info-card" aria-label="Informações de contato">
           <h2>Canais de Atendimento</h2>
-          <p style="color: var(--cor-texto-suave); margin-bottom: 2rem;">
+          <p class="texto-suave-mb">
             Nossos consultores imobiliários atendem em toda a região metropolitana de São Paulo.
           </p>
 
@@ -223,7 +226,7 @@
               </label>
             </div>
 
-            <button type="submit" class="btn-secundario" style="font-size: 1.05rem; padding: 0.9rem;">
+            <button type="submit" class="btn-secundario btn-contato-enviar">
               🚀 Enviar Solicitação de Contato
             </button>
 
@@ -241,7 +244,7 @@
       <div class="footer-col">
         <h3>AlugaFácil</h3>
         <p>Plataforma moderna de locação residencial desenvolvida para facilitar a conexão entre locatários e lares incríveis em São Paulo.</p>
-        <p style="margin-top: 0.75rem;"><strong>WDD231 – Projeto Final Individual</strong></p>
+        <p class="espacamento-topo-sm"><strong>WDD231 – Projeto Final Individual</strong></p>
       </div>
 
       <div class="footer-col">

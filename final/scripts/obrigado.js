@@ -62,7 +62,7 @@ document.addEventListener('DOMContentLoaded', () => {
     `;
   } else {
     containerDados.innerHTML = `
-      <p style="color: var(--cor-texto-suave); margin: 1.5rem 0;">
+      <p class="texto-suave espacamento-topo-md">
         Nenhum dado enviado através do formulário foi identificado.
       </p>
     `;

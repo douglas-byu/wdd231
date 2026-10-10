@@ -5,13 +5,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Solicitação Enviada com Sucesso | AlugaFácil</title>
-  <meta name="description" content="Confirmação de recebimento da solicitação de contato e agendamento de visita na AlugaFácil.">
+  <meta name="description" content="Confirmação de recebimento da solicitação de contato e agendamento de visita imobiliária na plataforma AlugaFácil em São Paulo.">
   <meta name="author" content="Douglas Silva">
 
   <!-- Open Graph -->
   <meta property="og:title" content="Solicitação Enviada | AlugaFácil">
-  <meta property="og:description" content="Confirmação de agendamento e envio de formulário na plataforma AlugaFácil.">
-  <meta property="og:image" content="imagens/logo.svg">
+  <meta property="og:description" content="Confirmação de recebimento da solicitação de contato e agendamento de visita imobiliária na plataforma AlugaFácil em São Paulo.">
+  <meta property="og:image" content="https://douglas-byu.github.io/wdd231/final/imagens/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:type" content="image/png">
   <meta property="og:url" content="https://douglas-byu.github.io/wdd231/final/obrigado.html">
   <meta property="og:type" content="website">
 
@@ -23,7 +26,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
 
-  <!-- CSS -->
+  <!-- CSS Externo -->
   <link rel="stylesheet" href="estilos/normalize.css">
   <link rel="stylesheet" href="estilos/principal.css">
 
@@ -58,7 +61,7 @@
           <li><a href="index.html" class="nav-link">Página Inicial</a></li>
           <li>
             <a href="imoveis.html" class="nav-link">
-              Imóveis <span class="nav-favoritos-badge" style="display: none;" title="Imóveis favoritados">0</span>
+              Imóveis <span class="nav-favoritos-badge oculto" title="Imóveis favoritados">0</span>
             </a>
           </li>
           <li><a href="contato.html" class="nav-link">Contato</a></li>
@@ -72,20 +75,20 @@
     <div class="confirmacao-box">
       <div class="icone-sucesso">✅</div>
       <h1>Obrigado pelo seu contato!</h1>
-      <p style="color: var(--cor-texto-suave); font-size: 1.05rem;">
+      <p class="texto-suave">
         Sua mensagem e solicitação foram recebidas com sucesso. Nossa equipe entrará em contato em até 24 horas úteis.
       </p>
 
-      <h2 style="font-size: 1.25rem; margin-top: 2rem; color: var(--cor-primaria);">
+      <h2 class="titulo-confirmacao-resumo">
         Resumo dos Dados Recebidos:
       </h2>
 
       <!-- Tabela dinâmica gerada pelo obrigado.js a partir da URLSearchParams -->
       <div id="resumo-dados-form" aria-live="polite">
-        <p style="color: var(--cor-texto-suave);">Processando informações enviadas...</p>
+        <p class="texto-suave">Processando informações enviadas...</p>
       </div>
 
-      <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; margin-top: 2rem;">
+      <div class="botoes-confirmacao">
         <a href="imoveis.html" class="btn-secundario">Explorar Mais Imóveis</a>
         <a href="index.html" class="btn-outline">Voltar ao Início</a>
       </div>
@@ -98,7 +101,7 @@
       <div class="footer-col">
         <h3>AlugaFácil</h3>
         <p>Plataforma moderna de locação residencial desenvolvida para facilitar a conexão entre locatários e lares incríveis em São Paulo.</p>
-        <p style="margin-top: 0.75rem;"><strong>WDD231 – Projeto Final Individual</strong></p>
+        <p class="espacamento-topo-sm"><strong>WDD231 – Projeto Final Individual</strong></p>
       </div>
 
       <div class="footer-col">

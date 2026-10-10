@@ -47,7 +47,7 @@ export function atualizarBadgeFavoritos() {
   const total = obterFavoritos().length;
   badges.forEach(badge => {
     badge.textContent = total;
-    badge.style.display = total > 0 ? 'inline-block' : 'none';
+    badge.classList.toggle('oculto', total === 0);
   });
 }
 

@@ -26,7 +26,7 @@ async function carregarDestaques() {
   } catch (erro) {
     console.error('Erro ao carregar destaques:', erro);
     gradeDestaques.innerHTML = `
-      <p class="mensagem-feedback" style="grid-column: 1 / -1;">
+      <p class="mensagem-feedback feedback-grid-completo">
         Não foi possível carregar os destaques no momento.
       </p>
     `;

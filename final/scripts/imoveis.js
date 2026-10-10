@@ -47,7 +47,7 @@ export async function carregarImoveis() {
       <div class="mensagem-feedback">
         <p>⚠️ Ocorreu um erro ao carregar os dados dos imóveis.</p>
         <p><small>${erro.message}</small></p>
-        <button class="btn-primario" onclick="location.reload()" style="margin-top: 1rem;">Tentar Novamente</button>
+        <button class="btn-primario espacamento-topo-md" onclick="location.reload()">Tentar Novamente</button>
       </div>
     `;
   }
@@ -115,9 +115,9 @@ function atualizarEstatisticas(imoveis) {
     const somaTotal = imoveis.reduce((acumulador, imovel) => acumulador + imovel.preco, 0);
     const media = Math.round(somaTotal / imoveis.length);
     mediaPrecosElemento.textContent = `Preço médio: R$ ${media.toLocaleString('pt-BR')}/mês`;
-    mediaPrecosElemento.style.display = 'inline';
+    mediaPrecosElemento.classList.remove('oculto');
   } else if (mediaPrecosElemento) {
-    mediaPrecosElemento.style.display = 'none';
+    mediaPrecosElemento.classList.add('oculto');
   }
 }
 
@@ -130,7 +130,7 @@ function renderizarCards(imoveis) {
       <div class="mensagem-feedback">
         <p>🔍 Nenhum imóvel encontrado com os filtros selecionados.</p>
         <p>Tente ajustar os critérios de busca ou limpar os filtros.</p>
-        <button class="btn-outline" id="btn-limpar-filtros" style="margin-top: 1rem;">Limpar Filtros</button>
+        <button class="btn-outline espacamento-topo-md" id="btn-limpar-filtros">Limpar Filtros</button>
       </div>
     `;
 
@@ -281,7 +281,7 @@ function abrirModalDetalhes(id) {
       </div>
 
       <h2>${imovel.titulo}</h2>
-      <p style="color: var(--cor-texto-suave); font-size: 0.95rem;">📍 ${imovel.endereco} - ${imovel.bairro}, ${imovel.cidade}</p>
+      <p class="endereco-modal">📍 ${imovel.endereco} - ${imovel.bairro}, ${imovel.cidade}</p>
 
       <div class="modal-preco">R$ ${imovel.preco.toLocaleString('pt-BR')}/mês</div>
       <div class="modal-custos">
@@ -298,8 +298,7 @@ function abrirModalDetalhes(id) {
       <div class="modal-acoes">
         <a
           href="contato.html?imovel=${imovel.id}&titulo=${encodeURIComponent(imovel.titulo)}"
-          class="btn-secundario"
-          style="flex: 1;"
+          class="btn-secundario btn-modal-acao"
         >
           🗓️ Agendar Visita para Este Imóvel
         </a>

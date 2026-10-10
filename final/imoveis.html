@@ -10,8 +10,11 @@
 
   <!-- Open Graph -->
   <meta property="og:title" content="Catálogo de Imóveis | AlugaFácil">
-  <meta property="og:description" content="Listagem completa de apartamentos, casas e studios para alugar em São Paulo com fotos e detalhes.">
-  <meta property="og:image" content="imagens/logo.svg">
+  <meta property="og:description" content="Confira mais de 15 imóveis residenciais disponíveis para aluguel em São Paulo. Filtre por tipo, quartos e faixa de preço com a AlugaFácil.">
+  <meta property="og:image" content="https://douglas-byu.github.io/wdd231/final/imagens/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:type" content="image/png">
   <meta property="og:url" content="https://douglas-byu.github.io/wdd231/final/imoveis.html">
   <meta property="og:type" content="website">
 
@@ -23,7 +26,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
 
-  <!-- CSS -->
+  <!-- CSS Externo -->
   <link rel="stylesheet" href="estilos/normalize.css">
   <link rel="stylesheet" href="estilos/principal.css">
 
@@ -60,7 +63,7 @@
           <li><a href="index.html" class="nav-link">Página Inicial</a></li>
           <li>
             <a href="imoveis.html" class="nav-link ativo" aria-current="page">
-              Imóveis <span class="nav-favoritos-badge" style="display: none;" title="Imóveis favoritados">0</span>
+              Imóveis <span class="nav-favoritos-badge oculto" title="Imóveis favoritados">0</span>
             </a>
           </li>
           <li><a href="contato.html" class="nav-link">Contato</a></li>
@@ -139,7 +142,7 @@
         <div id="contador-imoveis" class="contador-resultados" aria-live="polite">
           Carregando catálogo de imóveis...
         </div>
-        <div id="media-precos" class="media-precos" aria-live="polite" style="display: none;"></div>
+        <div id="media-precos" class="media-precos oculto" aria-live="polite"></div>
       </div>
 
       <!-- GRADE DE IMÓVEIS (GERADA DINAMICAMENTE PELO JAVASCRIPT) -->
@@ -167,7 +170,7 @@
       <div class="footer-col">
         <h3>AlugaFácil</h3>
         <p>Plataforma moderna de locação residencial desenvolvida para facilitar a conexão entre locatários e lares incríveis em São Paulo.</p>
-        <p style="margin-top: 0.75rem;"><strong>WDD231 – Projeto Final Individual</strong></p>
+        <p class="espacamento-topo-sm"><strong>WDD231 – Projeto Final Individual</strong></p>
       </div>
 
       <div class="footer-col">
