@@ -1,0 +1,1259 @@
+/* ==========================================================================
+   ALUGAFÁCIL - ESTILOS PRINCIPAIS (WDD 231 - PROJETO FINAL)
+   Paleta: #1A4F7A (Primária), #27AE60 (Secundária), #F39C12 (Acento)
+   ========================================================================== */
+
+:root {
+  --cor-primaria: #1a4f7a;
+  --cor-primaria-escura: #133959;
+  --cor-secundaria: #27ae60;
+  --cor-secundaria-escura: #219653;
+  --cor-acento: #f39c12;
+  --cor-acento-escura: #d68910;
+  --cor-fundo: #f4f6f9;
+  --cor-card: #ffffff;
+  --cor-texto: #2c3e50;
+  --cor-texto-suave: #64748b;
+  --cor-borda: #e2e8f0;
+  --cor-sombra: rgba(15, 23, 42, 0.08);
+  --cor-sombra-hover: rgba(15, 23, 42, 0.16);
+
+  --fonte-titulo: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --fonte-corpo: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+  --transicao-padrao: 0.25s ease-in-out;
+  --raio-borda: 10px;
+  --largura-maxima: 1200px;
+}
+
+/* --- RESET & TIPOGRAFIA BÁSICA --- */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--fonte-corpo);
+  color: var(--cor-texto);
+  background-color: var(--cor-fundo);
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--fonte-titulo);
+  color: var(--cor-primaria);
+  line-height: 1.25;
+  font-weight: 700;
+}
+
+h1 { font-size: 1.85rem; }
+h2 { font-size: 1.5rem; margin-bottom: 0.75rem; }
+h3 { font-size: 1.2rem; }
+
+p {
+  margin-bottom: 0.75rem;
+}
+
+a {
+  color: var(--cor-primaria);
+  text-decoration: none;
+  transition: color var(--transicao-padrao);
+}
+
+a:hover, a:focus-visible {
+  color: var(--cor-secundaria);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+button {
+  font-family: var(--fonte-titulo);
+  cursor: pointer;
+  border: none;
+  outline: none;
+  transition: all var(--transicao-padrao);
+}
+
+/* --- CONTAINER GERAL --- */
+.container {
+  width: 100%;
+  max-width: var(--largura-maxima);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+
+/* --- CABEÇALHO & NAVEGAÇÃO --- */
+.site-header {
+  background-color: #ffffff;
+  border-bottom: 2px solid var(--cor-borda);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 10px var(--cor-sombra);
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 1.25rem;
+  max-width: var(--largura-maxima);
+  margin: 0 auto;
+}
+
+.logo-link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.logo-img {
+  width: 160px;
+  height: auto;
+}
+
+/* Menu Hambúrguer (Mobile) */
+.menu-toggle {
+  background: transparent;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  padding: 8px;
+  border-radius: 6px;
+}
+
+.menu-toggle:focus-visible {
+  outline: 2px solid var(--cor-primaria);
+}
+
+.menu-toggle span {
+  display: block;
+  width: 24px;
+  height: 3px;
+  background-color: var(--cor-primaria);
+  border-radius: 2px;
+  transition: transform var(--transicao-padrao), opacity var(--transicao-padrao);
+}
+
+.menu-toggle[aria-expanded="true"] span:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.menu-toggle[aria-expanded="true"] span:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-toggle[aria-expanded="true"] span:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+/* Menu de Navegação */
+.nav-principal {
+  display: none;
+  width: 100%;
+}
+
+.nav-principal.ativo {
+  display: block;
+}
+
+.nav-lista {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding: 1rem 0;
+  border-top: 1px solid var(--cor-borda);
+}
+
+.nav-link {
+  display: block;
+  padding: 0.65rem 1rem;
+  font-family: var(--fonte-titulo);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--cor-texto);
+  border-radius: 6px;
+  transition: background-color var(--transicao-padrao), color var(--transicao-padrao);
+}
+
+.nav-link:hover, .nav-link:focus-visible {
+  background-color: #f1f5f9;
+  color: var(--cor-primaria);
+}
+
+/* Wayfinding: Página Ativa */
+.nav-link.ativo {
+  background-color: #eaf2f8;
+  color: var(--cor-primaria);
+  border-left: 4px solid var(--cor-secundaria);
+}
+
+.nav-favoritos-badge {
+  background-color: var(--cor-acento);
+  color: #ffffff;
+  font-size: 0.75rem;
+  padding: 2px 7px;
+  border-radius: 12px;
+  margin-left: 6px;
+  font-weight: 700;
+}
+
+/* --- HERO SECTION (PÁGINA INICIAL) --- */
+.hero {
+  position: relative;
+  background: linear-gradient(135deg, var(--cor-primaria) 0%, var(--cor-primaria-escura) 100%);
+  color: #ffffff;
+  padding: 3.5rem 1.25rem 4rem;
+  text-align: center;
+}
+
+.hero-conteudo {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.hero h1 {
+  color: #ffffff;
+  font-size: 2.1rem;
+  margin-bottom: 1rem;
+}
+
+.hero-subtitulo {
+  font-size: 1.1rem;
+  color: #e2e8f0;
+  margin-bottom: 2rem;
+}
+
+/* Caixa de Busca Rápida no Hero */
+.hero-busca-card {
+  background-color: #ffffff;
+  border-radius: var(--raio-borda);
+  padding: 1.25rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  color: var(--cor-texto);
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.hero-busca-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.busca-grupo {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.busca-grupo label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+  color: var(--cor-primaria);
+}
+
+.busca-input, .busca-select {
+  padding: 0.65rem 0.85rem;
+  border: 1px solid var(--cor-borda);
+  border-radius: 6px;
+  font-family: var(--fonte-corpo);
+  font-size: 0.95rem;
+}
+
+.busca-input:focus, .busca-select:focus {
+  outline: 2px solid var(--cor-primaria);
+  border-color: var(--cor-primaria);
+}
+
+.btn-busca-hero {
+  background-color: var(--cor-secundaria);
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 0.85rem 1.5rem;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.btn-busca-hero:hover {
+  background-color: var(--cor-secundaria-escura);
+}
+
+/* --- BOTÕES GERAIS --- */
+.btn-primario {
+  background-color: var(--cor-primaria);
+  color: #ffffff;
+  padding: 0.7rem 1.4rem;
+  border-radius: 6px;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.btn-primario:hover {
+  background-color: var(--cor-primaria-escura);
+  color: #ffffff;
+}
+
+.btn-secundario {
+  background-color: var(--cor-secundaria);
+  color: #ffffff;
+  padding: 0.7rem 1.4rem;
+  border-radius: 6px;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.btn-secundario:hover {
+  background-color: var(--cor-secundaria-escura);
+  color: #ffffff;
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: var(--cor-primaria);
+  border: 2px solid var(--cor-primaria);
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-outline:hover {
+  background-color: var(--cor-primaria);
+  color: #ffffff;
+}
+
+/* --- SEÇÃO DE ESTATÍSTICAS / NÚMEROS --- */
+.secao-stats {
+  background-color: #ffffff;
+  padding: 2.5rem 1.25rem;
+  border-bottom: 1px solid var(--cor-borda);
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  text-align: center;
+}
+
+.stat-item {
+  padding: 1rem;
+}
+
+.stat-numero {
+  font-family: var(--fonte-titulo);
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--cor-secundaria);
+  line-height: 1;
+  margin-bottom: 0.4rem;
+}
+
+.stat-rotulo {
+  font-size: 0.95rem;
+  color: var(--cor-texto-suave);
+  font-weight: 500;
+}
+
+/* --- SEÇÃO DE DESTAQUES (HOME) --- */
+.secao-destaques {
+  padding: 3.5rem 1.25rem;
+}
+
+.secao-cabecalho {
+  text-align: center;
+  max-width: 650px;
+  margin: 0 auto 2.5rem;
+}
+
+.secao-cabecalho p {
+  color: var(--cor-texto-suave);
+}
+
+/* --- GRADE DE CARDS DE IMÓVEIS --- */
+.grade-imoveis {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+.card-imovel {
+  background-color: var(--cor-card);
+  border-radius: var(--raio-borda);
+  border: 1px solid var(--cor-borda);
+  overflow: hidden;
+  box-shadow: 0 4px 12px var(--cor-sombra);
+  transition: transform var(--transicao-padrao), box-shadow var(--transicao-padrao);
+  display: flex;
+  flex-direction: column;
+}
+
+.card-imovel:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 20px var(--cor-sombra-hover);
+}
+
+.card-imagem-wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background-color: #e2e8f0;
+}
+
+.card-imagem {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.card-imovel:hover .card-imagem {
+  transform: scale(1.03);
+}
+
+.badge-tipo {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background-color: var(--cor-primaria);
+  color: #ffffff;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.25);
+}
+
+.btn-favoritar {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: rgba(255, 255, 255, 0.9);
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  color: #94a3b8;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+.btn-favoritar:hover {
+  background-color: #ffffff;
+  color: #e11d48;
+}
+
+.btn-favoritar.favorito {
+  color: #e11d48;
+}
+
+.card-conteudo {
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.card-preco-box {
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+  margin-bottom: 0.5rem;
+}
+
+.card-preco {
+  font-family: var(--fonte-titulo);
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--cor-secundaria);
+}
+
+.card-periodo {
+  font-size: 0.85rem;
+  color: var(--cor-texto-suave);
+}
+
+.card-titulo {
+  font-size: 1.15rem;
+  margin-bottom: 0.35rem;
+  color: var(--cor-primaria);
+}
+
+.card-endereco {
+  font-size: 0.85rem;
+  color: var(--cor-texto-suave);
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* Detalhes de atributos: Quartos, Banheiros, Metragem */
+.card-atributos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  padding: 0.75rem 0;
+  border-top: 1px solid var(--cor-borda);
+  border-bottom: 1px solid var(--cor-borda);
+  margin-bottom: 1.25rem;
+}
+
+.atributo-item {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.85rem;
+  color: var(--cor-texto);
+  font-weight: 500;
+}
+
+.card-acoes {
+  margin-top: auto;
+  display: flex;
+  gap: 0.5rem;
+}
+
+.btn-detalhes {
+  flex: 1;
+  background-color: var(--cor-primaria);
+  color: #ffffff;
+  padding: 0.65rem 1rem;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+.btn-detalhes:hover {
+  background-color: var(--cor-primaria-escura);
+}
+
+/* --- SEÇÃO VANTAGENS / POR QUE NÓS --- */
+.secao-vantagens {
+  background-color: #ffffff;
+  padding: 3.5rem 1.25rem;
+  border-top: 1px solid var(--cor-borda);
+  border-bottom: 1px solid var(--cor-borda);
+}
+
+.grid-vantagens {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+.card-vantagem {
+  background-color: var(--cor-fundo);
+  padding: 1.75rem;
+  border-radius: var(--raio-borda);
+  border: 1px solid var(--cor-borda);
+  text-align: center;
+}
+
+.icone-vantagem {
+  font-size: 2.2rem;
+  margin-bottom: 0.75rem;
+  display: inline-block;
+}
+
+.card-vantagem h3 {
+  margin-bottom: 0.5rem;
+  color: var(--cor-primaria);
+}
+
+.card-vantagem p {
+  font-size: 0.95rem;
+  color: var(--cor-texto-suave);
+  margin-bottom: 0;
+}
+
+/* --- SEÇÃO DEPOIMENTOS --- */
+.secao-depoimentos {
+  padding: 3.5rem 1.25rem;
+}
+
+.grid-depoimentos {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+.card-depoimento {
+  background-color: #ffffff;
+  padding: 1.5rem;
+  border-radius: var(--raio-borda);
+  border: 1px solid var(--cor-borda);
+  box-shadow: 0 4px 10px var(--cor-sombra);
+}
+
+.estrelas-depoimento {
+  color: var(--cor-acento);
+  font-size: 1.1rem;
+  margin-bottom: 0.75rem;
+}
+
+.texto-depoimento {
+  font-style: italic;
+  font-size: 0.95rem;
+  color: var(--cor-texto);
+  margin-bottom: 1rem;
+}
+
+.autor-depoimento {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.avatar-depoimento {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: #e2e8f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+}
+
+.autor-info strong {
+  display: block;
+  font-size: 0.9rem;
+  color: var(--cor-primaria);
+}
+
+.autor-info span {
+  font-size: 0.8rem;
+  color: var(--cor-texto-suave);
+}
+
+/* --- BANNER CTA --- */
+.secao-cta {
+  background: linear-gradient(135deg, var(--cor-primaria) 0%, var(--cor-primaria-escura) 100%);
+  color: #ffffff;
+  padding: 3rem 1.25rem;
+  text-align: center;
+  border-radius: var(--raio-borda);
+  margin: 2rem auto;
+}
+
+.secao-cta h2 {
+  color: #ffffff;
+  margin-bottom: 0.75rem;
+}
+
+.secao-cta p {
+  color: #e2e8f0;
+  max-width: 600px;
+  margin: 0 auto 1.5rem;
+}
+
+/* ==========================================================================
+   PÁGINA DE IMÓVEIS (imoveis.html)
+   ========================================================================== */
+
+.pagina-titulo-area {
+  background-color: #ffffff;
+  border-bottom: 1px solid var(--cor-borda);
+  padding: 2.5rem 1.25rem;
+  text-align: center;
+}
+
+.pagina-titulo-area h1 {
+  margin-bottom: 0.5rem;
+}
+
+.pagina-titulo-area p {
+  color: var(--cor-texto-suave);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Painel de Filtros */
+.painel-filtros {
+  background-color: #ffffff;
+  padding: 1.25rem;
+  border-radius: var(--raio-borda);
+  border: 1px solid var(--cor-borda);
+  margin: 2rem 0 1.5rem;
+  box-shadow: 0 4px 10px var(--cor-sombra);
+}
+
+.filtros-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+.filtro-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.filtro-item label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--cor-primaria);
+  margin-bottom: 0.35rem;
+}
+
+.filtro-select, .filtro-input {
+  padding: 0.65rem 0.85rem;
+  border: 1px solid var(--cor-borda);
+  border-radius: 6px;
+  font-family: var(--fonte-corpo);
+  font-size: 0.95rem;
+}
+
+.filtro-select:focus, .filtro-input:focus {
+  outline: 2px solid var(--cor-primaria);
+}
+
+.barra-resultados {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--cor-borda);
+}
+
+.contador-resultados {
+  font-weight: 600;
+  color: var(--cor-texto);
+}
+
+.media-precos {
+  font-size: 0.9rem;
+  color: var(--cor-secundaria-escura);
+  font-weight: 600;
+}
+
+/* Feedback de carregamento / sem resultados */
+.mensagem-feedback {
+  background-color: #ffffff;
+  padding: 2.5rem 1.5rem;
+  text-align: center;
+  border-radius: var(--raio-borda);
+  border: 1px solid var(--cor-borda);
+  color: var(--cor-texto-suave);
+  grid-column: 1 / -1;
+}
+
+/* ==========================================================================
+   MODAL DE DETALHES DO IMÓVEL (<dialog>)
+   ========================================================================== */
+
+dialog.modal-imovel {
+  border: none;
+  border-radius: 12px;
+  padding: 0;
+  max-width: 700px;
+  width: 90%;
+  margin: auto;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+}
+
+dialog::backdrop {
+  background-color: rgba(15, 23, 42, 0.65);
+  backdrop-filter: blur(4px);
+}
+
+.modal-cabecalho {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background-color: #e2e8f0;
+}
+
+.modal-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.btn-fechar-modal {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: #ffffff;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-fechar-modal:hover {
+  background-color: #000000;
+}
+
+.modal-corpo {
+  padding: 1.5rem;
+}
+
+.modal-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.modal-tag {
+  background-color: #e2e8f0;
+  color: var(--cor-texto);
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.modal-preco {
+  font-family: var(--fonte-titulo);
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--cor-secundaria);
+  margin-bottom: 0.5rem;
+}
+
+.modal-custos {
+  font-size: 0.85rem;
+  color: var(--cor-texto-suave);
+  margin-bottom: 1rem;
+}
+
+.modal-descricao {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 1.25rem;
+  color: var(--cor-texto);
+}
+
+.modal-comodidades-titulo {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--cor-primaria);
+  margin-bottom: 0.5rem;
+}
+
+.modal-comodidades-lista {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.comodidade-pill {
+  background-color: #eafaf1;
+  color: var(--cor-secundaria-escura);
+  border: 1px solid #d4efdf;
+  padding: 4px 10px;
+  border-radius: 15px;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.modal-acoes {
+  display: flex;
+  gap: 0.75rem;
+  border-top: 1px solid var(--cor-borda);
+  padding-top: 1rem;
+}
+
+/* ==========================================================================
+   PÁGINA DE CONTATO (contato.html) & FORMULÁRIO
+   ========================================================================== */
+
+.secao-contato {
+  padding: 3rem 1.25rem;
+}
+
+.grid-contato {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+.contato-info-card {
+  background-color: #ffffff;
+  padding: 2rem;
+  border-radius: var(--raio-borda);
+  border: 1px solid var(--cor-borda);
+  box-shadow: 0 4px 10px var(--cor-sombra);
+}
+
+.info-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.info-icone {
+  font-size: 1.5rem;
+  background-color: #eaf2f8;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--cor-primaria);
+  flex-shrink: 0;
+}
+
+.info-texto h3 {
+  font-size: 1.05rem;
+  margin-bottom: 0.2rem;
+}
+
+.info-texto p {
+  color: var(--cor-texto-suave);
+  font-size: 0.95rem;
+  margin-bottom: 0;
+}
+
+.formulario-card {
+  background-color: #ffffff;
+  padding: 2rem;
+  border-radius: var(--raio-borda);
+  border: 1px solid var(--cor-borda);
+  box-shadow: 0 4px 10px var(--cor-sombra);
+}
+
+.formulario-card h2 {
+  margin-bottom: 0.5rem;
+}
+
+.formulario-card .subtitulo {
+  color: var(--cor-texto-suave);
+  margin-bottom: 1.75rem;
+  font-size: 0.95rem;
+}
+
+.form-alugafacil {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.form-campo {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.form-campo label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--cor-primaria);
+  margin-bottom: 0.35rem;
+}
+
+.form-campo input,
+.form-campo select,
+.form-campo textarea {
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--cor-borda);
+  border-radius: 6px;
+  font-family: var(--fonte-corpo);
+  font-size: 0.95rem;
+  color: var(--cor-texto);
+  background-color: #ffffff;
+}
+
+.form-campo input:focus,
+.form-campo select:focus,
+.form-campo textarea:focus {
+  outline: 2px solid var(--cor-primaria);
+  border-color: var(--cor-primaria);
+}
+
+.form-campo textarea {
+  resize: vertical;
+  min-height: 110px;
+}
+
+.form-checkbox {
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.form-checkbox input {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--cor-secundaria);
+}
+
+.form-checkbox label {
+  font-size: 0.85rem;
+  font-weight: 400;
+  color: var(--cor-texto);
+  margin-bottom: 0;
+}
+
+/* ==========================================================================
+   PÁGINA OBRIGADO (obrigado.html) & ATRIBUIÇÕES
+   ========================================================================== */
+
+.confirmacao-box {
+  background-color: #ffffff;
+  max-width: 650px;
+  margin: 3.5rem auto;
+  padding: 2.5rem 1.5rem;
+  border-radius: var(--raio-borda);
+  border: 1px solid var(--cor-borda);
+  box-shadow: 0 4px 15px var(--cor-sombra);
+  text-align: center;
+}
+
+.icone-sucesso {
+  font-size: 3.5rem;
+  color: var(--cor-secundaria);
+  margin-bottom: 1rem;
+}
+
+.tabela-resumo {
+  width: 100%;
+  text-align: left;
+  border-collapse: collapse;
+  margin: 1.5rem 0 2rem;
+  background-color: var(--cor-fundo);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.tabela-resumo th, .tabela-resumo td {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid var(--cor-borda);
+  font-size: 0.95rem;
+}
+
+.tabela-resumo th {
+  background-color: #e2e8f0;
+  color: var(--cor-primaria);
+  width: 38%;
+}
+
+.secao-atribuicoes {
+  background-color: #ffffff;
+  max-width: 800px;
+  margin: 3rem auto;
+  padding: 2.5rem 2rem;
+  border-radius: var(--raio-borda);
+  border: 1px solid var(--cor-borda);
+}
+
+.secao-atribuicoes ul {
+  padding-left: 1.5rem;
+  margin-top: 1rem;
+}
+
+.secao-atribuicoes li {
+  margin-bottom: 0.75rem;
+}
+
+/* ==========================================================================
+   RODAPÉ DO SITE
+   ========================================================================== */
+
+.site-footer {
+  background-color: var(--cor-primaria-escura);
+  color: #ffffff;
+  margin-top: auto;
+  padding-top: 3rem;
+  border-top: 4px solid var(--cor-secundaria);
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  padding-bottom: 2.5rem;
+}
+
+.footer-col h3 {
+  color: #ffffff;
+  font-size: 1.15rem;
+  margin-bottom: 1rem;
+}
+
+.footer-col p {
+  color: #cbd5e1;
+  font-size: 0.9rem;
+}
+
+.footer-links {
+  list-style: none;
+}
+
+.footer-links li {
+  margin-bottom: 0.5rem;
+}
+
+.footer-links a {
+  color: #cbd5e1;
+  font-size: 0.9rem;
+}
+
+.footer-links a:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+.video-link-destaque {
+  background-color: var(--cor-acento);
+  color: #ffffff !important;
+  font-weight: 600;
+  padding: 0.45rem 0.85rem;
+  border-radius: 6px;
+  display: inline-block;
+  margin-top: 0.5rem;
+  text-decoration: none !important;
+}
+
+.video-link-destaque:hover {
+  background-color: var(--cor-acento-escura);
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 1.5rem 1.25rem;
+  text-align: center;
+  font-size: 0.85rem;
+  color: #94a3b8;
+}
+
+.footer-bottom p {
+  margin-bottom: 0.25rem;
+}
+
+/* ==========================================================================
+   MEDIA QUERIES (RESPONSIVIDADE: 768px e 1024px)
+   ========================================================================== */
+
+@media (min-width: 768px) {
+  .menu-toggle {
+    display: none;
+  }
+
+  .nav-principal {
+    display: block;
+    width: auto;
+  }
+
+  .nav-lista {
+    flex-direction: row;
+    gap: 0.5rem;
+    padding: 0;
+    border-top: none;
+  }
+
+  .nav-link.ativo {
+    border-left: none;
+    border-bottom: 3px solid var(--cor-secundaria);
+    background-color: transparent;
+  }
+
+  .hero h1 {
+    font-size: 2.6rem;
+  }
+
+  .hero-busca-form {
+    flex-direction: row;
+    align-items: flex-end;
+  }
+
+  .hero-busca-form .busca-grupo {
+    flex: 1;
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .grade-imoveis {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .grid-vantagens {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .grid-depoimentos {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .filtros-grid {
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    align-items: flex-end;
+  }
+
+  .barra-resultados {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .grid-contato {
+    grid-template-columns: 1fr 1.4fr;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1.5fr 1fr 1fr;
+  }
+}
+
+@media (min-width: 1024px) {
+  .grade-imoveis {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .grid-depoimentos {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

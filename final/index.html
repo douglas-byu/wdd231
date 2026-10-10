@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AlugaFácil | Aluguel de Imóveis Residenciais sem Complicação</title>
+  <meta name="description" content="Encontre apartamentos, casas e studios para alugar em São Paulo com a AlugaFácil. Plataforma de locação residencial transparente, moderna e sem fiador.">
+  <meta name="author" content="Douglas Silva">
+
+  <!-- Metadados Open Graph para Redes Sociais -->
+  <meta property="og:title" content="AlugaFácil | Locação de Imóveis Residenciais">
+  <meta property="og:description" content="Encontre o imóvel ideal para alugar de forma simples e transparente com a AlugaFácil.">
+  <meta property="og:image" content="imagens/logo.svg">
+  <meta property="og:url" content="https://douglas-byu.github.io/wdd231/final/index.html">
+  <meta property="og:type" content="website">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="imagens/favicon.svg">
+
+  <!-- Google Fonts: Poppins (Títulos) e Inter (Corpo) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+
+  <!-- Estilos CSS -->
+  <link rel="stylesheet" href="estilos/normalize.css">
+  <link rel="stylesheet" href="estilos/principal.css">
+
+  <!-- Módulos JavaScript (ES Modules) -->
+  <script type="module" src="scripts/principal.js"></script>
+  <script type="module" src="scripts/inicio.js"></script>
+</head>
+
+<body>
+
+  <!-- ===== CABEÇALHO & NAVEGAÇÃO PRINCIPAL ===== -->
+  <header class="site-header">
+    <div class="header-container">
+      <a href="index.html" class="logo-link" aria-label="Ir para a página inicial da AlugaFácil">
+        <img src="imagens/logo.svg" alt="Logotipo AlugaFácil" class="logo-img" width="160" height="36">
+      </a>
+
+      <!-- Botão Hambúrguer para telas móveis -->
+      <button
+        id="menu-toggle"
+        class="menu-toggle"
+        aria-label="Abrir menu de navegação"
+        aria-expanded="false"
+        aria-controls="nav-menu"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <!-- Navegação com Wayfinding -->
+      <nav id="nav-menu" class="nav-principal" aria-label="Navegação do site">
+        <ul class="nav-lista">
+          <li><a href="index.html" class="nav-link ativo" aria-current="page">Página Inicial</a></li>
+          <li>
+            <a href="imoveis.html" class="nav-link">
+              Imóveis <span class="nav-favoritos-badge" style="display: none;" title="Imóveis favoritados">0</span>
+            </a>
+          </li>
+          <li><a href="contato.html" class="nav-link">Contato</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ===== CONTEÚDO PRINCIPAL ===== -->
+  <main>
+
+    <!-- SEÇÃO HERO COM BUSCA RÁPIDA -->
+    <section class="hero" aria-labelledby="titulo-hero">
+      <div class="hero-conteudo container">
+        <h1 id="titulo-hero">Encontre o imóvel dos seus sonhos para alugar</h1>
+        <p class="hero-subtitulo">Sem burocracia, sem fiador e com atendimento humanizado em toda São Paulo.</p>
+
+        <!-- Formulário de Busca Integrado -->
+        <div class="hero-busca-card">
+          <form id="form-busca-hero" class="hero-busca-form" role="search">
+            <div class="busca-grupo">
+              <label for="hero-busca-texto">Localização ou bairro:</label>
+              <input
+                type="text"
+                id="hero-busca-texto"
+                class="busca-input"
+                placeholder="Ex: Pinheiros, Jardins, Moema..."
+              >
+            </div>
+
+            <div class="busca-grupo">
+              <label for="hero-busca-tipo">Tipo de imóvel:</label>
+              <select id="hero-busca-tipo" class="busca-select">
+                <option value="todos">Todos os tipos</option>
+                <option value="Apartamento">Apartamento</option>
+                <option value="Casa">Casa</option>
+                <option value="Studio">Studio</option>
+                <option value="Cobertura">Cobertura</option>
+              </select>
+            </div>
+
+            <button type="submit" class="btn-busca-hero">
+              🔍 Buscar Imóveis
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- SEÇÃO DE ESTATÍSTICAS DA PLATAFORMA -->
+    <section class="secao-stats" aria-label="Estatísticas da AlugaFácil">
+      <div class="container stats-grid">
+        <div class="stat-item">
+          <div class="stat-numero">+150</div>
+          <div class="stat-rotulo">Imóveis residenciais verificados</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-numero">24h</div>
+          <div class="stat-rotulo">Tempo médio para aprovação de cadastro</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-numero">98%</div>
+          <div class="stat-rotulo">Índice de satisfação dos inquilinos</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SEÇÃO DE IMÓVEIS EM DESTAQUE (DINÂMICO COM JAVASCRIPT) -->
+    <section class="secao-destaques container" aria-labelledby="titulo-destaques">
+      <div class="secao-cabecalho">
+        <h2 id="titulo-destaques">Imóveis em Evidência</h2>
+        <p>Confira algumas das melhores oportunidades selecionadas por nossa equipe nesta semana.</p>
+      </div>
+
+      <!-- Container preenchido via JavaScript (inicio.js) -->
+      <div id="grade-destaques" class="grade-imoveis" aria-live="polite">
+        <p class="mensagem-feedback">Carregando imóveis em evidência...</p>
+      </div>
+
+      <div style="text-align: center; margin-top: 2.5rem;">
+        <a href="imoveis.html" class="btn-secundario">
+          Ver Todos os Imóveis Disponíveis →
+        </a>
+      </div>
+    </section>
+
+    <!-- SEÇÃO DE VANTAGENS DO ALUGAFÁCIL -->
+    <section class="secao-vantagens" aria-labelledby="titulo-vantagens">
+      <div class="container">
+        <div class="secao-cabecalho">
+          <h2 id="titulo-vantagens">Por que alugar com a AlugaFácil?</h2>
+          <p>Revolucionamos o processo de locação para que você foque apenas em curtir seu novo lar.</p>
+        </div>
+
+        <div class="grid-vantagens">
+          <article class="card-vantagem">
+            <span class="icone-vantagem">🛡️</span>
+            <h3>Sem Fiador</h3>
+            <p>Alugue sem a necessidade de fiador tradicional ou caução exorbitante. Análise de crédito 100% digital e justa.</p>
+          </article>
+
+          <article class="card-vantagem">
+            <span class="icone-vantagem">⚡</span>
+            <h3>Visitas Rápidas e Online</h3>
+            <p>Agende visitas presenciais com corretores parceiros em poucos cliques ou faça tours virtuais diretamente pelo site.</p>
+          </article>
+
+          <article class="card-vantagem">
+            <span class="icone-vantagem">📝</span>
+            <h3>Contrato Digital Seguro</h3>
+            <p>Assinatura eletrônica com validade jurídica instantânea, sem filas de cartório e sem desperdício de tempo.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- SEÇÃO DE DEPOIMENTOS DE CLIENTES -->
+    <section class="secao-depoimentos container" aria-labelledby="titulo-depoimentos">
+      <div class="secao-cabecalho">
+        <h2 id="titulo-depoimentos">O que nossos clientes dizem</h2>
+        <p>Histórias reais de quem encontrou o imóvel ideal com praticidade e segurança.</p>
+      </div>
+
+      <div class="grid-depoimentos">
+        <article class="card-depoimento">
+          <div class="estrelas-depoimento" aria-label="Avaliação 5 estrelas">★★★★★</div>
+          <p class="texto-depoimento">
+            "Aluguei meu studio em Pinheiros em menos de 3 dias. Todo o processo pelo site foi extremamente rápido e sem dor de cabeça!"
+          </p>
+          <div class="autor-depoimento">
+            <div class="avatar-depoimento">👩‍💼</div>
+            <div class="autor-info">
+              <strong>Mariana Souza</strong>
+              <span>Inquilina em Pinheiros</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="card-depoimento">
+          <div class="estrelas-depoimento" aria-label="Avaliação 5 estrelas">★★★★★</div>
+          <p class="texto-depoimento">
+            "A possibilidade de favoritar e comparar os apartamentos ajudou muito minha família a escolher o lugar perfeito perto das escolas."
+          </p>
+          <div class="autor-depoimento">
+            <div class="avatar-depoimento">👨‍👩‍👧</div>
+            <div class="autor-info">
+              <strong>Rodrigo e Camila Mendes</strong>
+              <span>Inquilinos em Moema</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="card-depoimento">
+          <div class="estrelas-depoimento" aria-label="Avaliação 5 estrelas">★★★★★</div>
+          <p class="texto-depoimento">
+            "As informações são claras e não tem pegadinha com valores de condomínio e IPTU. Recomendo para todos os amigos!"
+          </p>
+          <div class="autor-depoimento">
+            <div class="avatar-depoimento">👨‍💻</div>
+            <div class="autor-info">
+              <strong>Felipe Andrade</strong>
+              <span>Inquilino nos Jardins</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- SEÇÃO DE CHAMADA PARA AÇÃO (CTA) -->
+    <section class="container" aria-label="Chamada para Ação">
+      <div class="secao-cta">
+        <h2>Pronto para encontrar seu próximo endereço?</h2>
+        <p>Explore centenas de opções residenciais disponíveis ou entre em contato com nossos consultores especialistas.</p>
+        <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
+          <a href="imoveis.html" class="btn-secundario">Explorar Imóveis</a>
+          <a href="contato.html" class="btn-outline" style="border-color: #ffffff; color: #ffffff;">Falar com um Consultor</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== RODAPÉ DO SITE ===== -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <!-- Coluna 1: Sobre -->
+      <div class="footer-col">
+        <h3>AlugaFácil</h3>
+        <p>Plataforma moderna de locação residencial desenvolvida para facilitar a conexão entre locatários e lares incríveis em São Paulo.</p>
+        <p style="margin-top: 0.75rem;"><strong>WDD231 – Projeto Final Individual</strong></p>
+      </div>
+
+      <!-- Coluna 2: Navegação e Atribuições -->
+      <div class="footer-col">
+        <h3>Navegação</h3>
+        <ul class="footer-links">
+          <li><a href="index.html">Página Inicial</a></li>
+          <li><a href="imoveis.html">Catálogo de Imóveis</a></li>
+          <li><a href="contato.html">Contato e Agendamentos</a></li>
+          <li><a href="atribuicoes.html">Atribuições de Recursos</a></li>
+        </ul>
+      </div>
+
+      <!-- Coluna 3: Demonstração em Vídeo & Contato -->
+      <div class="footer-col">
+        <h3>Demonstração da Semana 06</h3>
+        <p>Assista ao vídeo explicativo sobre as funcionalidades JavaScript, integração com JSON assíncrono e recursos implementados:</p>
+        <a
+          href="https://youtu.be/SEU_VIDEO_AQUI"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="video-link-destaque"
+          id="link-video-demonstracao"
+          aria-label="Assistir ao vídeo de demonstração do projeto final no YouTube ou Loom"
+        >
+          ▶️ Assistir Vídeo de Demonstração (W06)
+        </a>
+      </div>
+    </div>
+
+    <!-- Linha Inferior com Copyright e Última Modificação -->
+    <div class="footer-bottom">
+      <div class="container">
+        <p>&copy; <span id="ano-atual">2026</span> AlugaFácil &bull; Douglas Silva &bull; Todos os direitos reservados.</p>
+        <p id="ultima-modificacao"></p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+
+</html>

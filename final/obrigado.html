@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Solicitação Enviada com Sucesso | AlugaFácil</title>
+  <meta name="description" content="Confirmação de recebimento da solicitação de contato e agendamento de visita na AlugaFácil.">
+  <meta name="author" content="Douglas Silva">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Solicitação Enviada | AlugaFácil">
+  <meta property="og:description" content="Confirmação de agendamento e envio de formulário na plataforma AlugaFácil.">
+  <meta property="og:image" content="imagens/logo.svg">
+  <meta property="og:url" content="https://douglas-byu.github.io/wdd231/final/obrigado.html">
+  <meta property="og:type" content="website">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="imagens/favicon.svg">
+
+  <!-- Google Fonts: Poppins e Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="estilos/normalize.css">
+  <link rel="stylesheet" href="estilos/principal.css">
+
+  <!-- JavaScript ES Modules -->
+  <script type="module" src="scripts/principal.js"></script>
+  <script type="module" src="scripts/obrigado.js"></script>
+</head>
+
+<body>
+
+  <!-- ===== CABEÇALHO ===== -->
+  <header class="site-header">
+    <div class="header-container">
+      <a href="index.html" class="logo-link" aria-label="Ir para a página inicial da AlugaFácil">
+        <img src="imagens/logo.svg" alt="Logotipo AlugaFácil" class="logo-img" width="160" height="36">
+      </a>
+
+      <button
+        id="menu-toggle"
+        class="menu-toggle"
+        aria-label="Abrir menu de navegação"
+        aria-expanded="false"
+        aria-controls="nav-menu"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav id="nav-menu" class="nav-principal" aria-label="Navegação do site">
+        <ul class="nav-lista">
+          <li><a href="index.html" class="nav-link">Página Inicial</a></li>
+          <li>
+            <a href="imoveis.html" class="nav-link">
+              Imóveis <span class="nav-favoritos-badge" style="display: none;" title="Imóveis favoritados">0</span>
+            </a>
+          </li>
+          <li><a href="contato.html" class="nav-link">Contato</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ===== CONTEÚDO PRINCIPAL (AÇÃO DO FORMULÁRIO) ===== -->
+  <main class="container">
+    <div class="confirmacao-box">
+      <div class="icone-sucesso">✅</div>
+      <h1>Obrigado pelo seu contato!</h1>
+      <p style="color: var(--cor-texto-suave); font-size: 1.05rem;">
+        Sua mensagem e solicitação foram recebidas com sucesso. Nossa equipe entrará em contato em até 24 horas úteis.
+      </p>
+
+      <h2 style="font-size: 1.25rem; margin-top: 2rem; color: var(--cor-primaria);">
+        Resumo dos Dados Recebidos:
+      </h2>
+
+      <!-- Tabela dinâmica gerada pelo obrigado.js a partir da URLSearchParams -->
+      <div id="resumo-dados-form" aria-live="polite">
+        <p style="color: var(--cor-texto-suave);">Processando informações enviadas...</p>
+      </div>
+
+      <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; margin-top: 2rem;">
+        <a href="imoveis.html" class="btn-secundario">Explorar Mais Imóveis</a>
+        <a href="index.html" class="btn-outline">Voltar ao Início</a>
+      </div>
+    </div>
+  </main>
+
+  <!-- ===== RODAPÉ DO SITE ===== -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-col">
+        <h3>AlugaFácil</h3>
+        <p>Plataforma moderna de locação residencial desenvolvida para facilitar a conexão entre locatários e lares incríveis em São Paulo.</p>
+        <p style="margin-top: 0.75rem;"><strong>WDD231 – Projeto Final Individual</strong></p>
+      </div>
+
+      <div class="footer-col">
+        <h3>Navegação</h3>
+        <ul class="footer-links">
+          <li><a href="index.html">Página Inicial</a></li>
+          <li><a href="imoveis.html">Catálogo de Imóveis</a></li>
+          <li><a href="contato.html">Contato e Agendamentos</a></li>
+          <li><a href="atribuicoes.html">Atribuições de Recursos</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h3>Demonstração da Semana 06</h3>
+        <p>Assista ao vídeo explicativo sobre as funcionalidades JavaScript, integração com JSON assíncrono e recursos implementados:</p>
+        <a
+          href="https://youtu.be/SEU_VIDEO_AQUI"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="video-link-destaque"
+          id="link-video-demonstracao"
+          aria-label="Assistir ao vídeo de demonstração do projeto final no YouTube ou Loom"
+        >
+          ▶️ Assistir Vídeo de Demonstração (W06)
+        </a>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container">
+        <p>&copy; <span id="ano-atual">2026</span> AlugaFácil &bull; Douglas Silva &bull; Todos os direitos reservados.</p>
+        <p id="ultima-modificacao"></p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+
+</html>

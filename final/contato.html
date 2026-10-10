@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contato e Agendamento de Visitas | AlugaFácil</title>
+  <meta name="description" content="Entre em contato com a equipe da AlugaFácil para agendar visitas a imóveis, tirar dúvidas sobre o processo de locação ou anunciar seu imóvel.">
+  <meta name="author" content="Douglas Silva">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Contato e Agendamento | AlugaFácil">
+  <meta property="og:description" content="Fale conosco para agendar uma visita ao seu futuro lar ou tirar dúvidas sobre aluguel sem burocracia.">
+  <meta property="og:image" content="imagens/logo.svg">
+  <meta property="og:url" content="https://douglas-byu.github.io/wdd231/final/contato.html">
+  <meta property="og:type" content="website">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="imagens/favicon.svg">
+
+  <!-- Google Fonts: Poppins e Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="estilos/normalize.css">
+  <link rel="stylesheet" href="estilos/principal.css">
+
+  <!-- JavaScript ES Modules -->
+  <script type="module" src="scripts/principal.js"></script>
+  <script type="module" src="scripts/contato.js"></script>
+</head>
+
+<body>
+
+  <!-- ===== CABEÇALHO & NAVEGAÇÃO PRINCIPAL ===== -->
+  <header class="site-header">
+    <div class="header-container">
+      <a href="index.html" class="logo-link" aria-label="Ir para a página inicial da AlugaFácil">
+        <img src="imagens/logo.svg" alt="Logotipo AlugaFácil" class="logo-img" width="160" height="36">
+      </a>
+
+      <!-- Botão Hambúrguer Mobile -->
+      <button
+        id="menu-toggle"
+        class="menu-toggle"
+        aria-label="Abrir menu de navegação"
+        aria-expanded="false"
+        aria-controls="nav-menu"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <!-- Navegação com Wayfinding (Contato ativo) -->
+      <nav id="nav-menu" class="nav-principal" aria-label="Navegação do site">
+        <ul class="nav-lista">
+          <li><a href="index.html" class="nav-link">Página Inicial</a></li>
+          <li>
+            <a href="imoveis.html" class="nav-link">
+              Imóveis <span class="nav-favoritos-badge" style="display: none;" title="Imóveis favoritados">0</span>
+            </a>
+          </li>
+          <li><a href="contato.html" class="nav-link ativo" aria-current="page">Contato</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ===== CONTEÚDO PRINCIPAL ===== -->
+  <main>
+
+    <!-- TÍTULO DA PÁGINA -->
+    <section class="pagina-titulo-area">
+      <div class="container">
+        <h1>Fale Conosco e Agende sua Visita</h1>
+        <p>Estamos prontos para atender você com total transparência e agilidade. Preencha o formulário ou use nossos canais diretos.</p>
+      </div>
+    </section>
+
+    <!-- SEÇÃO DE CONTATO E FORMULÁRIO -->
+    <section class="secao-contato container">
+      <div class="grid-contato">
+
+        <!-- Informações e Canais Diretos -->
+        <aside class="contato-info-card" aria-label="Informações de contato">
+          <h2>Canais de Atendimento</h2>
+          <p style="color: var(--cor-texto-suave); margin-bottom: 2rem;">
+            Nossos consultores imobiliários atendem em toda a região metropolitana de São Paulo.
+          </p>
+
+          <div class="info-item">
+            <div class="info-icone">📍</div>
+            <div class="info-texto">
+              <h3>Endereço Central</h3>
+              <p>Av. Paulista, 1578 - Bela Vista</p>
+              <p>São Paulo, SP - CEP 01310-200</p>
+            </div>
+          </div>
+
+          <div class="info-item">
+            <div class="info-icone">📞</div>
+            <div class="info-texto">
+              <h3>Telefone & WhatsApp</h3>
+              <p><a href="tel:+5511987654321">(11) 98765-4321</a></p>
+              <p><a href="tel:+551130031234">(11) 3003-1234</a></p>
+            </div>
+          </div>
+
+          <div class="info-item">
+            <div class="info-icone">✉️</div>
+            <div class="info-texto">
+              <h3>E-mail de Atendimento</h3>
+              <p><a href="mailto:contato@alugafacil.com.br">contato@alugafacil.com.br</a></p>
+              <p><a href="mailto:locacao@alugafacil.com.br">locacao@alugafacil.com.br</a></p>
+            </div>
+          </div>
+
+          <div class="info-item">
+            <div class="info-icone">⏰</div>
+            <div class="info-texto">
+              <h3>Horário de Funcionamento</h3>
+              <p>Segunda a Sexta: 08h00 às 19h00</p>
+              <p>Sábados: 09h00 às 15h00</p>
+            </div>
+          </div>
+        </aside>
+
+        <!-- Formulário HTML (Envia via GET para obrigado.html) -->
+        <div class="formulario-card">
+          <h2>Envie sua Mensagem</h2>
+          <p class="subtitulo">Preencha os campos abaixo para agendarmos sua visita ou esclarecermos suas dúvidas:</p>
+
+          <form action="obrigado.html" method="get" class="form-alugafacil" id="form-contato">
+
+            <div class="form-campo">
+              <label for="nome">Nome Completo: *</label>
+              <input
+                type="text"
+                id="nome"
+                name="nome"
+                placeholder="Ex: João da Silva"
+                required
+                autocomplete="name"
+              >
+            </div>
+
+            <div class="form-campo">
+              <label for="email">E-mail: *</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="seuemail@exemplo.com"
+                required
+                autocomplete="email"
+              >
+            </div>
+
+            <div class="form-campo">
+              <label for="telefone">Telefone / WhatsApp: *</label>
+              <input
+                type="tel"
+                id="telefone"
+                name="telefone"
+                placeholder="(11) 99999-9999"
+                required
+                autocomplete="tel"
+              >
+            </div>
+
+            <div class="form-campo">
+              <label for="tipo-solicitacao">Tipo de Solicitação: *</label>
+              <select id="tipo-solicitacao" name="tipo-solicitacao" required>
+                <option value="visita">Agendamento de Visita Presencial</option>
+                <option value="duvida">Dúvida sobre um Imóvel Específico</option>
+                <option value="anuncio">Quero Anunciar meu Imóvel para Alugar</option>
+                <option value="outro">Outro Assunto</option>
+              </select>
+            </div>
+
+            <div class="form-campo">
+              <label for="imovel-interesse">Imóvel de Interesse (opcional):</label>
+              <input
+                type="text"
+                id="imovel-interesse"
+                name="imovel-interesse"
+                placeholder="Ex: Apartamento Moderno nos Jardins"
+              >
+            </div>
+
+            <div class="form-campo">
+              <label for="data-visita">Data Desejada para Visita (se aplicável):</label>
+              <input
+                type="date"
+                id="data-visita"
+                name="data-visita"
+              >
+            </div>
+
+            <div class="form-campo">
+              <label for="mensagem">Mensagem / Observações: *</label>
+              <textarea
+                id="mensagem"
+                name="mensagem"
+                rows="4"
+                placeholder="Conte-nos mais sobre seus horários de preferência ou detalhes do que procura..."
+                required
+              ></textarea>
+            </div>
+
+            <div class="form-campo form-checkbox">
+              <input
+                type="checkbox"
+                id="termos"
+                name="termos"
+                required
+              >
+              <label for="termos">
+                Concordo com os termos de privacidade e autorizo a AlugaFácil a entrar em contato comigo. *
+              </label>
+            </div>
+
+            <button type="submit" class="btn-secundario" style="font-size: 1.05rem; padding: 0.9rem;">
+              🚀 Enviar Solicitação de Contato
+            </button>
+
+          </form>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== RODAPÉ DO SITE ===== -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-col">
+        <h3>AlugaFácil</h3>
+        <p>Plataforma moderna de locação residencial desenvolvida para facilitar a conexão entre locatários e lares incríveis em São Paulo.</p>
+        <p style="margin-top: 0.75rem;"><strong>WDD231 – Projeto Final Individual</strong></p>
+      </div>
+
+      <div class="footer-col">
+        <h3>Navegação</h3>
+        <ul class="footer-links">
+          <li><a href="index.html">Página Inicial</a></li>
+          <li><a href="imoveis.html">Catálogo de Imóveis</a></li>
+          <li><a href="contato.html">Contato e Agendamentos</a></li>
+          <li><a href="atribuicoes.html">Atribuições de Recursos</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h3>Demonstração da Semana 06</h3>
+        <p>Assista ao vídeo explicativo sobre as funcionalidades JavaScript, integração com JSON assíncrono e recursos implementados:</p>
+        <a
+          href="https://youtu.be/SEU_VIDEO_AQUI"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="video-link-destaque"
+          id="link-video-demonstracao"
+          aria-label="Assistir ao vídeo de demonstração do projeto final no YouTube ou Loom"
+        >
+          ▶️ Assistir Vídeo de Demonstração (W06)
+        </a>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container">
+        <p>&copy; <span id="ano-atual">2026</span> AlugaFácil &bull; Douglas Silva &bull; Todos os direitos reservados.</p>
+        <p id="ultima-modificacao"></p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+
+</html>

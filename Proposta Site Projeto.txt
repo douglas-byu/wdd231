@@ -1,0 +1,12 @@
+Proposta Site:
+
+Tópico do Projeto: Site de Locação de Imóveis
+
+Descrição: O site terá como objetivo apresentar uma plataforma de locação de imóveis residenciais, onde os visitantes poderão visualizar imóveis disponíveis para alugar, filtrar por características (como número de quartos, localização e preço) e entrar em contato com o responsável para agendar uma visita.
+
+O site será composto por três páginas principais:
+
+Página inicial (index.html): Apresentação da empresa/plataforma, destaques de imóveis em evidência e chamada para ação.
+Página de imóveis: Listagem completa dos imóveis disponíveis com filtros e cards com informações como endereço, preço, número de quartos e foto.
+Página de contato: Formulário para o usuário solicitar mais informações ou agendar uma visita.
+Por que escolhi esse assunto: Escolhi esse tema por ser relevante no dia a dia das pessoas e por oferecer um conteúdo rico e estruturado, com dados variados sobre os imóveis que permitem explorar bem os recursos de HTML, CSS e JavaScript. Além disso, é um tipo de site amplamente usado no mercado real, o que torna o aprendizado mais prático e aplicável.

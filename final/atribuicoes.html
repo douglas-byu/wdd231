@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Atribuições de Recursos | AlugaFácil</title>
+  <meta name="description" content="Página de créditos e atribuição de fontes de dados, imagens, ícones e referências do projeto AlugaFácil.">
+  <meta name="author" content="Douglas Silva">
+
+  <link rel="icon" type="image/svg+xml" href="imagens/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="estilos/normalize.css">
+  <link rel="stylesheet" href="estilos/principal.css">
+
+  <script type="module" src="scripts/principal.js"></script>
+</head>
+
+<body>
+
+  <header class="site-header">
+    <div class="header-container">
+      <a href="index.html" class="logo-link">
+        <img src="imagens/logo.svg" alt="Logotipo AlugaFácil" class="logo-img" width="160" height="36">
+      </a>
+
+      <button id="menu-toggle" class="menu-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="nav-menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav id="nav-menu" class="nav-principal" aria-label="Navegação do site">
+        <ul class="nav-lista">
+          <li><a href="index.html" class="nav-link">Página Inicial</a></li>
+          <li><a href="imoveis.html" class="nav-link">Imóveis</a></li>
+          <li><a href="contato.html" class="nav-link">Contato</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="secao-atribuicoes">
+      <h1>Atribuições de Recursos e Créditos</h1>
+      <p>Este site foi desenvolvido para fins educacionais como projeto individual de conclusão da disciplina <strong>WDD 231 – Frontend Web Development I</strong> (BYU-Idaho).</p>
+
+      <h2 style="font-size: 1.25rem; margin-top: 1.5rem;">Fontes Tipográficas:</h2>
+      <ul>
+        <li><strong>Poppins & Inter</strong> – Disponibilizadas gratuitamente através do <a href="https://fonts.google.com/" target="_blank" rel="noopener noreferrer">Google Fonts</a> sob licença aberta (SIL Open Font License).</li>
+      </ul>
+
+      <h2 style="font-size: 1.25rem; margin-top: 1.5rem;">Imagens e Ilustrações Vetoriais:</h2>
+      <ul>
+        <li><strong>Ilustrações de Imóveis e Logotipo</strong> – Arte vetorial autoral no formato SVG desenvolvida para o projeto AlugaFácil, inspirada em arquitetura residencial contemporânea e ícones urbanos de domínio público.</li>
+      </ul>
+
+      <h2 style="font-size: 1.25rem; margin-top: 1.5rem;">Dados e Estrutura:</h2>
+      <ul>
+        <li><strong>Catálogo de Imóveis (imoveis.json)</strong> – Base de dados fictícia estruturada com base nas referências e médias do mercado imobiliário da cidade de São Paulo, SP.</li>
+      </ul>
+
+      <div style="margin-top: 2rem;">
+        <a href="index.html" class="btn-primario">← Voltar à Página Inicial</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-col">
+        <h3>AlugaFácil</h3>
+        <p>Plataforma moderna de locação residencial desenvolvida para facilitar a conexão entre locatários e lares incríveis em São Paulo.</p>
+        <p style="margin-top: 0.75rem;"><strong>WDD231 – Projeto Final Individual</strong></p>
+      </div>
+
+      <div class="footer-col">
+        <h3>Navegação</h3>
+        <ul class="footer-links">
+          <li><a href="index.html">Página Inicial</a></li>
+          <li><a href="imoveis.html">Catálogo de Imóveis</a></li>
+          <li><a href="contato.html">Contato e Agendamentos</a></li>
+          <li><a href="atribuicoes.html">Atribuições de Recursos</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h3>Demonstração da Semana 06</h3>
+        <p>Assista ao vídeo explicativo sobre as funcionalidades JavaScript, integração com JSON assíncrono e recursos implementados:</p>
+        <a href="https://youtu.be/SEU_VIDEO_AQUI" target="_blank" rel="noopener noreferrer" class="video-link-destaque">
+          ▶️ Assistir Vídeo de Demonstração (W06)
+        </a>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container">
+        <p>&copy; <span id="ano-atual">2026</span> AlugaFácil &bull; Douglas Silva &bull; Todos os direitos reservados.</p>
+        <p id="ultima-modificacao"></p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+
+</html>

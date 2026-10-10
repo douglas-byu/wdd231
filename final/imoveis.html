@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Catálogo de Imóveis para Alugar | AlugaFácil</title>
+  <meta name="description" content="Confira mais de 15 imóveis residenciais disponíveis para aluguel em São Paulo. Filtre por tipo, quartos e faixa de preço com a AlugaFácil.">
+  <meta name="author" content="Douglas Silva">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Catálogo de Imóveis | AlugaFácil">
+  <meta property="og:description" content="Listagem completa de apartamentos, casas e studios para alugar em São Paulo com fotos e detalhes.">
+  <meta property="og:image" content="imagens/logo.svg">
+  <meta property="og:url" content="https://douglas-byu.github.io/wdd231/final/imoveis.html">
+  <meta property="og:type" content="website">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="imagens/favicon.svg">
+
+  <!-- Google Fonts: Poppins e Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="estilos/normalize.css">
+  <link rel="stylesheet" href="estilos/principal.css">
+
+  <!-- JavaScript ES Modules -->
+  <script type="module" src="scripts/principal.js"></script>
+  <script type="module" src="scripts/imoveis.js"></script>
+</head>
+
+<body>
+
+  <!-- ===== CABEÇALHO & NAVEGAÇÃO PRINCIPAL ===== -->
+  <header class="site-header">
+    <div class="header-container">
+      <a href="index.html" class="logo-link" aria-label="Ir para a página inicial da AlugaFácil">
+        <img src="imagens/logo.svg" alt="Logotipo AlugaFácil" class="logo-img" width="160" height="36">
+      </a>
+
+      <!-- Botão Hambúrguer Mobile -->
+      <button
+        id="menu-toggle"
+        class="menu-toggle"
+        aria-label="Abrir menu de navegação"
+        aria-expanded="false"
+        aria-controls="nav-menu"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <!-- Navegação com Wayfinding (Imóveis ativo) -->
+      <nav id="nav-menu" class="nav-principal" aria-label="Navegação do site">
+        <ul class="nav-lista">
+          <li><a href="index.html" class="nav-link">Página Inicial</a></li>
+          <li>
+            <a href="imoveis.html" class="nav-link ativo" aria-current="page">
+              Imóveis <span class="nav-favoritos-badge" style="display: none;" title="Imóveis favoritados">0</span>
+            </a>
+          </li>
+          <li><a href="contato.html" class="nav-link">Contato</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ===== CONTEÚDO PRINCIPAL ===== -->
+  <main>
+
+    <!-- TÍTULO DA PÁGINA -->
+    <section class="pagina-titulo-area">
+      <div class="container">
+        <h1>Imóveis Disponíveis para Locação</h1>
+        <p>Explore nosso portfólio completo de residências verificadas e utilize os filtros para encontrar a opção ideal para seu estilo de vida.</p>
+      </div>
+    </section>
+
+    <div class="container">
+
+      <!-- PAINEL DE FILTROS INTERATIVO -->
+      <section class="painel-filtros" aria-label="Filtros de busca de imóveis">
+        <div class="filtros-grid">
+          <!-- Filtro por Texto -->
+          <div class="filtro-item">
+            <label for="filtro-busca">Buscar por bairro, cidade ou palavra-chave:</label>
+            <input
+              type="text"
+              id="filtro-busca"
+              class="filtro-input"
+              placeholder="Ex: Pinheiros, piscina, reformado..."
+            >
+          </div>
+
+          <!-- Filtro por Tipo -->
+          <div class="filtro-item">
+            <label for="filtro-tipo">Tipo de imóvel:</label>
+            <select id="filtro-tipo" class="filtro-select">
+              <option value="todos">Todos os tipos</option>
+              <option value="Apartamento">Apartamento</option>
+              <option value="Casa">Casa</option>
+              <option value="Studio">Studio</option>
+              <option value="Cobertura">Cobertura</option>
+            </select>
+          </div>
+
+          <!-- Filtro por Quartos -->
+          <div class="filtro-item">
+            <label for="filtro-quartos">Dormitórios:</label>
+            <select id="filtro-quartos" class="filtro-select">
+              <option value="0">Qualquer quantidade</option>
+              <option value="1">1 ou mais quartos</option>
+              <option value="2">2 ou mais quartos</option>
+              <option value="3">3 ou mais quartos</option>
+              <option value="4">4 ou mais quartos</option>
+            </select>
+          </div>
+
+          <!-- Filtro por Preço Máximo -->
+          <div class="filtro-item">
+            <label for="filtro-preco">Valor máximo:</label>
+            <select id="filtro-preco" class="filtro-select">
+              <option value="0">Qualquer valor</option>
+              <option value="2500">Até R$ 2.500/mês</option>
+              <option value="4000">Até R$ 4.000/mês</option>
+              <option value="6000">Até R$ 6.000/mês</option>
+              <option value="10000">Até R$ 10.000/mês</option>
+            </select>
+          </div>
+        </div>
+      </section>
+
+      <!-- BARRA DE RESULTADOS E RESUMO DINÂMICO -->
+      <div class="barra-resultados">
+        <div id="contador-imoveis" class="contador-resultados" aria-live="polite">
+          Carregando catálogo de imóveis...
+        </div>
+        <div id="media-precos" class="media-precos" aria-live="polite" style="display: none;"></div>
+      </div>
+
+      <!-- GRADE DE IMÓVEIS (GERADA DINAMICAMENTE PELO JAVASCRIPT) -->
+      <section
+        id="grade-imoveis"
+        class="grade-imoveis"
+        aria-live="polite"
+        aria-label="Lista de imóveis disponíveis"
+      >
+        <p class="mensagem-feedback">Carregando imóveis...</p>
+      </section>
+
+    </div>
+
+    <!-- DIÁLOGO MODAL NATIVO E ACESSÍVEL (<dialog>) -->
+    <dialog id="modal-detalhes" class="modal-imovel" aria-labelledby="modal-titulo">
+      <div id="modal-conteudo"></div>
+    </dialog>
+
+  </main>
+
+  <!-- ===== RODAPÉ DO SITE ===== -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-col">
+        <h3>AlugaFácil</h3>
+        <p>Plataforma moderna de locação residencial desenvolvida para facilitar a conexão entre locatários e lares incríveis em São Paulo.</p>
+        <p style="margin-top: 0.75rem;"><strong>WDD231 – Projeto Final Individual</strong></p>
+      </div>
+
+      <div class="footer-col">
+        <h3>Navegação</h3>
+        <ul class="footer-links">
+          <li><a href="index.html">Página Inicial</a></li>
+          <li><a href="imoveis.html">Catálogo de Imóveis</a></li>
+          <li><a href="contato.html">Contato e Agendamentos</a></li>
+          <li><a href="atribuicoes.html">Atribuições de Recursos</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h3>Demonstração da Semana 06</h3>
+        <p>Assista ao vídeo explicativo sobre as funcionalidades JavaScript, integração com JSON assíncrono e recursos implementados:</p>
+        <a
+          href="https://youtu.be/SEU_VIDEO_AQUI"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="video-link-destaque"
+          id="link-video-demonstracao"
+          aria-label="Assistir ao vídeo de demonstração do projeto final no YouTube ou Loom"
+        >
+          ▶️ Assistir Vídeo de Demonstração (W06)
+        </a>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container">
+        <p>&copy; <span id="ano-atual">2026</span> AlugaFácil &bull; Douglas Silva &bull; Todos os direitos reservados.</p>
+        <p id="ultima-modificacao"></p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+
+</html>
